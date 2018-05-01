@@ -1,6 +1,9 @@
-﻿namespace TeduShop.Data.Infrastructure
+﻿using System;
+
+namespace TeduShop.Data.Infrastructure
 {
-    interface IDBFactory
+    public interface IDBFactory : IDisposable
     {
+        TeduShopDbContext Init();
     }
 }
