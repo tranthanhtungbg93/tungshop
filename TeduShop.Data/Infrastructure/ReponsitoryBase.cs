@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace TeduShop.Data.Infrastructure
 {
-    public class ReponsitoryBase<T> where T : class
+    public class ReponsitoryBase<T> : IReponsitory<T> where T : class
     {
         #region Properties
         private TeduShopDbContext dataContext;
@@ -112,7 +112,7 @@ namespace TeduShop.Data.Infrastructure
             total = _resetSet.Count();
             return _resetSet.AsQueryable();
         }
-        public bool CheckContains(Expression<Func<T,bool>> predicate)
+        public bool CheckContain(Expression<Func<T,bool>> predicate)
         {
             return dataContext.Set<T>().Count<T>(predicate) > 0;
         }
