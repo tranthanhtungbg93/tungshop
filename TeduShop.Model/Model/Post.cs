@@ -17,7 +17,6 @@ namespace TeduShop.Model.Model
         [Column(TypeName ="varchar")]
         public string Alias { set; get; }
         [Required]
-        [MaxLength(256)]
         public int CategoryID { set; get; }
         [MaxLength(256)]
         public string Image { set; get; }

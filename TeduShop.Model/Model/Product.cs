@@ -22,8 +22,8 @@ namespace TeduShop.Model.Model
         public string Alias { set; get; }
         public int CateforyID { set; get; }
         public string Image { set; get; }
-        public XElement MoreImages { set; get; }
-
+        [Column(TypeName = "xml")]
+        public string MoreImages { set; get; }
         public decimal Price { set; get; }
         public decimal? PromotionPrice { set; get; }
         public int? Warranty { set; get; }
@@ -32,8 +32,8 @@ namespace TeduShop.Model.Model
         public bool? HomeFlag { set; get; }
         public bool? HotFlag { get; set; }
         public int? ViewCount { get; set; }
-        
-        [ForeignKey("CateforyID")]
+
+        [ForeignKey("CategoryID")]
         public virtual IEnumerable<ProductCategory> ProductCategories { set; get; }
     }
 }
