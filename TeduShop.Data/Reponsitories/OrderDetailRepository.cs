@@ -3,7 +3,7 @@ using TeduShop.Model.Model;
 
 namespace TeduShop.Data.Reponsitories
 {
-    public interface IOrderDetailRepository
+    public interface IOrderDetailRepository : IReponsitory<OrderDetail>
     {
     }
     public class OrderDetailRepository : ReponsitoryBase<OrderDetail>, IOrderDetailRepository

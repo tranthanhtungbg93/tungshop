@@ -3,7 +3,7 @@ using TeduShop.Model.Model;
 
 namespace TeduShop.Data.Reponsitories
 {
-    public interface IMenuRepository
+    public interface IMenuRepository : IReponsitory<Menu>
     {
     }
     public class MenuRepository: ReponsitoryBase<Menu>, IMenuRepository

@@ -3,7 +3,7 @@ using TeduShop.Model.Model;
 
 namespace TeduShop.Data.Reponsitories
 {
-    public interface ISlideRepository
+    public interface ISlideRepository : IReponsitory<Slide>
     {
     }
     public class SlideRepository : ReponsitoryBase<Slide>, ISlideRepository

@@ -3,7 +3,7 @@ using TeduShop.Model.Model;
 
 namespace TeduShop.Data.Reponsitories
 {
-    public interface IVisitorStatisticReposiroty
+    public interface IVisitorStatisticReposiroty : IReponsitory<VisitorStatistic>
     {
     }
     public class VisitorStatisticReposiroty : ReponsitoryBase<VisitorStatistic>, IVisitorStatisticReposiroty
