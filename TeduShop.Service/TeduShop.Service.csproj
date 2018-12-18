@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostCategoryService\IPostCategoryService.cs" />
+    <Compile Include="PostCategoryService\PostCategoryService.cs" />
     <Compile Include="PostService\IPostService.cs" />
     <Compile Include="PostService\PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

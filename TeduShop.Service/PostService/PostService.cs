@@ -33,30 +33,35 @@ namespace TeduShop.Service.PostService
             return _postRepository.GetAll(new string[] { "PostCategory" });
         }
 
-        public IEnumerable<Post> GetAllByTagPaging(string tag, int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllByTagPaging(string tag, int pageIndex, int pageSize, out int totalRow)
         {
-            return _postRepository.GetMultiPaging(x => x.Status, out totalRow, page, pageSize);
+            return _postRepository.GetAllbyTag(tag, pageIndex, pageSize, out totalRow);
             // sẽ xử lý join bảng posttag trong bài khác
         }
 
-        public IEnumerable<Post> GetAllPaging(int page, int pageSize, out int totalRow)
+        public IEnumerable<Post> GetAllPaging(int pageIndex, int pageSize, out int totalRow)
         {
-            throw new NotImplementedException();
+            return _postRepository.GetMultiPaging(x => x.Status, out totalRow, pageIndex, pageSize);
+        }
+
+        public IEnumerable<Post> GetByCategoryId(int categoryId, int pageIndex, int pageSize, out int totalRow)
+        {
+            return _postRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, pageIndex, pageSize, new string[] { "PostCategory" });
         }
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return _postRepository.GetSingleById(id);
         }
 
         public void SaveChanges()
         {
-            throw new NotImplementedException();
+            _unitOfWork.Commit();
         }
 
         public void Update(Post post)
         {
-            throw new NotImplementedException();
+            _postRepository.Update(post);
         }
     }
 }
