@@ -47,6 +47,11 @@ namespace TeduShop.Service.PostCategoryService
             return _postCategory.GetSingleById(id);
         }
 
+        public void SaveChange()
+        {
+            _unitOfWork.Commit();
+        }
+
         public void Update(PostCategory category)
         {
             _postCategory.Update(category);

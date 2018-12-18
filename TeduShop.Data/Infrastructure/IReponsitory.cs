@@ -7,19 +7,19 @@ namespace TeduShop.Data.Infrastructure
     public interface IReponsitory<T> where T : class
     {
         // Marks an entity as new 
-        void Add(T entity);
+        T Add(T entity);
 
         //Marks an entity as modified
         void Update(T entity);
 
         //Marks an entity to bee removed
-        void Delete(T entity);
+        T Delete(T entity);
 
         // Delete by id
-        void Delete(int id);
+        T Delete(int id);
 
         //Delete multi records
-        void DeleteMulti(Expression<Func<T,bool>> where);
+        void DeleteMulti(Expression<Func<T, bool>> where);
 
         //Get an entity by int id
         T GetSingleById(int id);
@@ -30,7 +30,7 @@ namespace TeduShop.Data.Infrastructure
 
         IQueryable<T> GetMulti(Expression<Func<T, bool>> predicate, string[] includes = null);
 
-        IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0,int size = 50, string[] includes = null);
+        IQueryable<T> GetMultiPaging(Expression<Func<T, bool>> filter, out int total, int index = 0, int size = 50, string[] includes = null);
 
         int Count(Expression<Func<T, bool>> where);
 

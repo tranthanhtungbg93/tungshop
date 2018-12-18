@@ -50,6 +50,7 @@
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
     <Compile Include="Model\Footer.cs" />
+    <Compile Include="Model\LogError.cs" />
     <Compile Include="Model\Menu.cs" />
     <Compile Include="Model\MenuGroup.cs" />
     <Compile Include="Model\Order.cs" />

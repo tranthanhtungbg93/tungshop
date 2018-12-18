@@ -9,11 +9,12 @@ namespace TeduShop.Service.PostCategoryService
 {
     public interface IPostCategoryService : IDisposable
     {
-        void Add(PostCategory category);
-        void Update(PostCategory category);
+        PostCategory Add(PostCategory category);
+        PostCategory Update(PostCategory category);
         void Delete(int id);
         IEnumerable<PostCategory> GetAll();
         IEnumerable<PostCategory> GetAllbyParentID(int parentId);
         PostCategory GetById(int id);
+        void SaveChange();
     }
 }
