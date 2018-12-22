@@ -10,7 +10,7 @@ namespace TeduShop.Service.PostCategoryService
     public interface IPostCategoryService : IDisposable
     {
         PostCategory Add(PostCategory category);
-        PostCategory Update(PostCategory category);
+        void Update(PostCategory category);
         void Delete(int id);
         IEnumerable<PostCategory> GetAll();
         IEnumerable<PostCategory> GetAllbyParentID(int parentId);

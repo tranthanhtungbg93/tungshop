@@ -17,9 +17,9 @@ namespace TeduShop.Service.PostCategoryService
             _unitOfWork = unitOfWork;
         }
 
-        public void Add(PostCategory category)
+        public PostCategory Add(PostCategory category)
         {
-            _postCategory.Add(category);
+            return _postCategory.Add(category);
         }
 
         public void Delete(int id)

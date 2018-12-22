@@ -6,9 +6,9 @@ namespace TeduShop.Data.Reponsitories
     public interface IPostCategoryReposiroty : IReponsitory<PostCategory>
     {
     }
-    public class PostCategoryReposiroty : ReponsitoryBase<PostCategory>, IPostCategoryReposiroty
+    public class PostCategoryRepository : ReponsitoryBase<PostCategory>, IPostCategoryReposiroty
     {
-        public PostCategoryReposiroty(IDBFactory dBFactory) : base(dBFactory)
+        public PostCategoryRepository(IDBFactory dBFactory) : base(dBFactory)
         {
 
         }

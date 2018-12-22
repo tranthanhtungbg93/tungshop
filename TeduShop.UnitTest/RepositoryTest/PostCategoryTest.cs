@@ -20,7 +20,7 @@ namespace TeduShop.UnitTest.RepositoryTest
         public void Initializa()
         {
             dBFactory = new DbFactory();
-            postCategoryReposiroty = new PostCategoryReposiroty(dBFactory);
+            postCategoryReposiroty = new PostCategoryRepository(dBFactory);
             unitOfWork = new UnitOfWork(dBFactory);
         }
 

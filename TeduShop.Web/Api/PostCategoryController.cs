@@ -16,7 +16,7 @@ namespace TeduShop.Web.Api
         {
             _postCategoryService = postCategoryService;
         }
-        [Route("GetAll")]
+
         public HttpResponseMessage Post(HttpRequestMessage req, PostCategory postCategory)
         {
             return CreateHttpRes(req, () =>
@@ -48,15 +48,15 @@ namespace TeduShop.Web.Api
                 }
                 else
                 {
-                    var result = _postCategoryService.Update(postCategory);
+                    _postCategoryService.Update(postCategory);
                     _postCategoryService.SaveChange();
 
-                    res = req.CreateResponse(HttpStatusCode.OK, result);
+                    res = req.CreateResponse(HttpStatusCode.OK);
                 }
                 return res;
             });
         }
-
+        [Route("GetAll")]
         public HttpResponseMessage Get(HttpRequestMessage req)
         {
             return CreateHttpRes(req, () =>
