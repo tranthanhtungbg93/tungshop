@@ -223,14 +223,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
-    <Content Include="app\app.route.js" />
-    <Content Include="app\component\product\product AddView.html" />
-    <Content Include="app\component\product\product.route.js" />
+    <Content Include="app\component\home\home.controller.js" />
+    <Content Include="app\component\home\home.html" />
+    <Content Include="app\component\product\productAddView.html" />
+    <Content Include="app\component\product\product.module.js" />
     <Content Include="app\component\product\productAddController.js" />
     <Content Include="app\component\product\productEditView.html" />
-    <Content Include="app\component\product\productEditView.js" />
+    <Content Include="app\component\product\productEditController.js" />
     <Content Include="app\component\product\productListView.html" />
-    <Content Include="app\component\product\productListView.js" />
+    <Content Include="app\component\product\productListController.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -6583,7 +6584,6 @@
     <Folder Include="app\component\product_category\" />
     <Folder Include="app\component\role\" />
     <Folder Include="app\component\user\" />
-    <Folder Include="app\shared\direcive\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
     <Folder Include="app\shared\services\" />
@@ -7126,6 +7126,7 @@
     <Content Include="Assets\Admin\libs\select2\src\scss\_dropdown.scss" />
     <Content Include="Assets\Admin\libs\select2\src\scss\_multiple.scss" />
     <Content Include="Assets\Admin\libs\select2\src\scss\_single.scss" />
+    <Content Include="app\shared\modules\tedushop.comom.js" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
