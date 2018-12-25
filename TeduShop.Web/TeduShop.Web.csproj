@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\PostCategoryController.cs" />
+    <Compile Include="Api\ProductCategoryController.cs" />
     <Compile Include="Api\UserController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -218,6 +219,8 @@
     <Compile Include="Models\PostCategoryModel.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\PostTagModel.cs" />
+    <Compile Include="Models\ProductCategoryModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -225,6 +228,9 @@
     <Content Include="app\app.js" />
     <Content Include="app\component\home\home.controller.js" />
     <Content Include="app\component\home\home.html" />
+    <Content Include="app\component\productCategories\productCategory.module.js" />
+    <Content Include="app\component\productCategories\productListCategoryController.js" />
+    <Content Include="app\component\productCategories\productListCategoryView.html" />
     <Content Include="app\component\product\productAddView.html" />
     <Content Include="app\component\product\product.module.js" />
     <Content Include="app\component\product\productAddController.js" />
@@ -232,6 +238,7 @@
     <Content Include="app\component\product\productEditController.js" />
     <Content Include="app\component\product\productListView.html" />
     <Content Include="app\component\product\productListController.js" />
+    <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -6581,12 +6588,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\component\order\" />
-    <Folder Include="app\component\product_category\" />
     <Folder Include="app\component\role\" />
     <Folder Include="app\component\user\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\services\" />
     <Folder Include="Assets\Admin\libs\inputmask\dist\min\inputmask\bindings\" />
     <Folder Include="Assets\Admin\libs\inputmask\dist\min\inputmask\dependencyLibs\" />
     <Folder Include="Assets\Admin\libs\inputmask\dist\min\inputmask\global\" />

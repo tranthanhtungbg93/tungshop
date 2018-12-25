@@ -35,7 +35,8 @@ namespace TeduShop.Web.App_Start
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
-            builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerRequest();
+            builder.RegisterType<DbFactory>().As<IDBFactory>().InstancePerRequest();
+            builder.RegisterType<DbFactory>().As<DbFactory>().InstancePerRequest();
             builder.RegisterType<TeduShopDbContext>().AsSelf().InstancePerRequest();
 
             // asp.net identity

@@ -1,7 +1,7 @@
 ﻿/// 
 
 (function () {
-    angular.module('tedushop', ['tedushop.product','tedushop.common']).config(config);
+    angular.module('tedushop', ['tedushop.product', 'tedushop.common', 'tedushop.productCategories']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function config($stateProvider, $urlRouterProvider) {

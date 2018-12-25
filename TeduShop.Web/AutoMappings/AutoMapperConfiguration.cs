@@ -16,6 +16,8 @@ namespace TeduShop.Web.AutoMappings
             Mapper.CreateMap<PostCategory, PostCategoryModel>();
             Mapper.CreateMap<Tag, TagModel>();
             Mapper.CreateMap<PostTag, PostTagModel>();
+            Mapper.CreateMap<ProductCategory, ProductCategoryModel>();
+            Mapper.CreateMap<Product, ProductModel>();
         }
     }
 }

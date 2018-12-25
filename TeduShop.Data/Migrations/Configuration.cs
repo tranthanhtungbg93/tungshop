@@ -3,6 +3,7 @@ namespace TeduShop.Data.Migrations
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -17,30 +18,78 @@ namespace TeduShop.Data.Migrations
 
         protected override void Seed(TeduShop.Data.TeduShopDbContext context)
         {
-            var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
 
-            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
 
-            var user = new ApplicationUser()
+            //var user = new ApplicationUser()
+            //{
+            //    UserName = "tungconbg93",
+            //    Email = "tranthanhtung.cd2.21@gmail.com",
+            //    EmailConfirmed = true,
+            //    Birthday = DateTime.Today,
+            //    FullName = "Tran Thanh Tung"
+            //};
+
+            //manager.Create(user, "Tung@123");
+            //// check role chua ton tai
+            //if (!roleManager.Roles.Any())
+            //{
+            //    roleManager.Create(new IdentityRole { Name = "Admin" });
+            //    roleManager.Create(new IdentityRole { Name = "User" });
+            //}
+
+            //var adminUser = manager.FindByEmail("tranthanhtung.cd2.21@gmail.com");
+
+            //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+            AddProductCategory(context);
+        }
+
+        public void AddProductCategory(TeduShop.Data.TeduShopDbContext context)
+        {
+            if(context.ProductCategories.Count() == 0)
             {
-                UserName = "tungconbg93",
-                Email = "tranthanhtung.cd2.21@gmail.com",
-                EmailConfirmed = true,
-                Birthday = DateTime.Today,
-                FullName = "Tran Thanh Tung"
+                List<ProductCategory> list = new List<ProductCategory>() {
+                new ProductCategory()
+                {
+                    Name = "Laptop",
+                    Alias="abc",
+                    Status=true
+                },
+                new ProductCategory()
+                {
+                    Name = "Ram",
+                    Alias="abc",
+                    Status=true
+                },
+                new ProductCategory()
+                {
+                    Name = "Card man hinh",
+                    Alias="abc",
+                    Status=true
+                },
+                new ProductCategory()
+                {
+                    Name = "G-shock",
+                    Alias="abc",
+                    Status=true
+                },
+                new ProductCategory()
+                {
+                    Name = "My tom tre con",
+                    Alias="abc",
+                    Status=true
+                },
+                new ProductCategory()
+                {
+                    Name = "Iphone XXX",
+                    Alias="abc",
+                    Status=true
+                },
             };
-
-            manager.Create(user, "Tung@123");
-            // check role chua ton tai
-            if (!roleManager.Roles.Any())
-            {
-                roleManager.Create(new IdentityRole { Name = "Admin" });
-                roleManager.Create(new IdentityRole { Name = "User" });
+                context.ProductCategories.AddRange(list);
+                context.SaveChanges();
             }
-
-            var adminUser = manager.FindByEmail("tranthanhtung.cd2.21@gmail.com");
-
-            manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
         }
     }
 }
