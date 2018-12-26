@@ -238,6 +238,7 @@
     <Content Include="app\component\product\productEditController.js" />
     <Content Include="app\component\product\productListView.html" />
     <Content Include="app\component\product\productListController.js" />
+    <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
