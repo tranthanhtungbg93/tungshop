@@ -24,13 +24,27 @@ namespace TeduShop.Web.Api
         }
 
         [Route("getList")]
-        public HttpResponseMessage GetAll(HttpRequestMessage request)
+        public HttpResponseMessage GetAll(HttpRequestMessage request, int page, int pageSize)
         {
             return CreateHttpRes(request, () =>
             {
+                int totalRow = 0;
                 var model = _productCategoryService.GetAll();
-                var requestData = Mapper.Map<List<ProductCategoryModel>>(model);
-                var reponse = request.CreateResponse(HttpStatusCode.OK, requestData);
+
+                totalRow = model.Count();
+                var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+
+                var requestData = Mapper.Map<List<ProductCategoryModel>>(query);
+
+                var paginationSet = new PaginationSet<ProductCategoryModel>()
+                {
+                    Items = requestData,
+                    Page = page,
+                    TotalPage = (int)Math.Ceiling((decimal)totalRow / pageSize),
+                    TotalCount = totalRow
+                };
+
+                var reponse = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return reponse;
             });
         }

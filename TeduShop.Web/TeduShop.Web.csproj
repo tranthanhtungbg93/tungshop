@@ -215,6 +215,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extenssion\EntityExtension.cs" />
     <Compile Include="Models\PostCategoryModel.cs" />
     <Compile Include="Models\PostModel.cs" />
@@ -238,7 +239,10 @@
     <Content Include="app\component\product\productEditController.js" />
     <Content Include="app\component\product\productListView.html" />
     <Content Include="app\component\product\productListController.js" />
+    <Content Include="app\shared\directives\pagerDirective.html" />
+    <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\filters\statusFilter.js" />
+    <Content Include="app\shared\modules\tedushop.comon.js" />
     <Content Include="app\shared\services\apiService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
@@ -6539,40 +6543,7 @@
     <Content Include="Assets\Admin\libs\select2\tests\vendor\qunit-1.23.1.css" />
     <Content Include="Assets\Admin\libs\select2\tests\vendor\qunit-1.23.1.js" />
     <Content Include="Assets\Admin\libs\select2\vendor\jquery-2.1.0.js" />
-    <Content Include="Assets\Admin\pages\calendar.html" />
-    <Content Include="Assets\Admin\pages\charts\chartjs.html" />
-    <Content Include="Assets\Admin\pages\charts\flot.html" />
-    <Content Include="Assets\Admin\pages\charts\inline.html" />
-    <Content Include="Assets\Admin\pages\charts\morris.html" />
-    <Content Include="Assets\Admin\pages\examples\404.html" />
-    <Content Include="Assets\Admin\pages\examples\500.html" />
-    <Content Include="Assets\Admin\pages\examples\blank.html" />
-    <Content Include="Assets\Admin\pages\examples\invoice-print.html" />
-    <Content Include="Assets\Admin\pages\examples\invoice.html" />
-    <Content Include="Assets\Admin\pages\examples\lockscreen.html" />
-    <Content Include="Assets\Admin\pages\examples\login.html" />
-    <Content Include="Assets\Admin\pages\examples\pace.html" />
-    <Content Include="Assets\Admin\pages\examples\profile.html" />
-    <Content Include="Assets\Admin\pages\examples\register.html" />
-    <Content Include="Assets\Admin\pages\forms\advanced.html" />
-    <Content Include="Assets\Admin\pages\forms\editors.html" />
-    <Content Include="Assets\Admin\pages\forms\general.html" />
-    <Content Include="Assets\Admin\pages\layout\boxed.html" />
-    <Content Include="Assets\Admin\pages\layout\collapsed-sidebar.html" />
-    <Content Include="Assets\Admin\pages\layout\fixed.html" />
-    <Content Include="Assets\Admin\pages\layout\top-nav.html" />
-    <Content Include="Assets\Admin\pages\mailbox\compose.html" />
-    <Content Include="Assets\Admin\pages\mailbox\mailbox.html" />
-    <Content Include="Assets\Admin\pages\mailbox\read-mail.html" />
-    <Content Include="Assets\Admin\pages\tables\data.html" />
-    <Content Include="Assets\Admin\pages\tables\simple.html" />
-    <Content Include="Assets\Admin\pages\UI\buttons.html" />
-    <Content Include="Assets\Admin\pages\UI\general.html" />
-    <Content Include="Assets\Admin\pages\UI\icons.html" />
-    <Content Include="Assets\Admin\pages\UI\modals.html" />
-    <Content Include="Assets\Admin\pages\UI\sliders.html" />
-    <Content Include="Assets\Admin\pages\UI\timeline.html" />
-    <Content Include="Assets\Admin\pages\widgets.html" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -7132,7 +7103,6 @@
     <Content Include="Assets\Admin\libs\select2\src\scss\_dropdown.scss" />
     <Content Include="Assets\Admin\libs\select2\src\scss\_multiple.scss" />
     <Content Include="Assets\Admin\libs\select2\src\scss\_single.scss" />
-    <Content Include="app\shared\modules\tedushop.comom.js" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
