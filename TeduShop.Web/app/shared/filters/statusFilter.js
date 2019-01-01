@@ -1,11 +1,11 @@
 ﻿(function (app) {
     app.filter('statusFilter', function () {
-        return function (input) {
-            if (input)
-                return 'Kich hoat';
-            else
-                return 'Khoa';
+		return function (input) {
+			if (input)
+				return 'Kích hoạt';
+			else
+				return 'Khóa';
 
-        }
+		};
     });
 })(angular.module('tedushop.common'));

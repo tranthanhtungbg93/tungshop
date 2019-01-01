@@ -244,6 +244,7 @@
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\modules\tedushop.comon.js" />
     <Content Include="app\shared\services\apiService.js" />
+    <Content Include="app\shared\services\notificationService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -311,6 +312,12 @@
     <Content Include="Assets\Admin\js\demo.js" />
     <Content Include="Assets\Admin\js\pages\dashboard.js" />
     <Content Include="Assets\Admin\js\pages\dashboard2.js" />
+    <Content Include="Assets\Admin\libs\angular-paging\dist\paging.js" />
+    <Content Include="Assets\Admin\libs\angular-paging\dist\paging.min.js" />
+    <Content Include="Assets\Admin\libs\angular-paging\Gruntfile.js" />
+    <Content Include="Assets\Admin\libs\angular-paging\src\app.js" />
+    <Content Include="Assets\Admin\libs\angular-paging\src\index.html" />
+    <Content Include="Assets\Admin\libs\angular-paging\src\paging.js" />
     <Content Include="Assets\Admin\libs\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="Assets\Admin\libs\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="Assets\Admin\libs\angular-ui-router\src\common.js" />
@@ -6543,6 +6550,10 @@
     <Content Include="Assets\Admin\libs\select2\tests\vendor\qunit-1.23.1.css" />
     <Content Include="Assets\Admin\libs\select2\tests\vendor\qunit-1.23.1.js" />
     <Content Include="Assets\Admin\libs\select2\vendor\jquery-2.1.0.js" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.css" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.js" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.min.css" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -7103,6 +7114,21 @@
     <Content Include="Assets\Admin\libs\select2\src\scss\_dropdown.scss" />
     <Content Include="Assets\Admin\libs\select2\src\scss\_multiple.scss" />
     <Content Include="Assets\Admin\libs\select2\src\scss\_single.scss" />
+    <Content Include="Assets\Admin\libs\angular-paging\.bower.json" />
+    <Content Include="Assets\Admin\libs\angular-paging\bower.json" />
+    <Content Include="Assets\Admin\libs\angular-paging\CHANGELOG.md" />
+    <Content Include="Assets\Admin\libs\angular-paging\dist\README.md" />
+    <Content Include="Assets\Admin\libs\angular-paging\LICENSE" />
+    <Content Include="Assets\Admin\libs\angular-paging\package.json" />
+    <Content Include="Assets\Admin\libs\angular-paging\README.md" />
+    <Content Include="Assets\Admin\libs\angular-paging\src\README.md" />
+    <Content Include="Assets\Admin\libs\toastr\.bower.json" />
+    <Content Include="Assets\Admin\libs\toastr\bower.json" />
+    <Content Include="Assets\Admin\libs\toastr\LICENSE" />
+    <Content Include="Assets\Admin\libs\toastr\README.md" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.js.map" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.less" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.scss" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>

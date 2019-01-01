@@ -13,7 +13,8 @@ namespace TeduShop.Service.ProductService
         void Update(ProductCategory category);
         void Delete(int id);
         IEnumerable<ProductCategory> GetAll();
-        IEnumerable<ProductCategory> GetAllbyParentID(int parentId);
+		IEnumerable<ProductCategory> GetAll(string keyword);
+		IEnumerable<ProductCategory> GetAllbyParentID(int parentId);
         ProductCategory GetById(int id);
         void SaveChange();
     }

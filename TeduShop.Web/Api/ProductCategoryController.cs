@@ -13,40 +13,40 @@ using TeduShop.Web.Models;
 
 namespace TeduShop.Web.Api
 {
-    [RoutePrefix("api/productCategory")]
-    public class ProductCategoryController : ApiControllerBase
-    {
-        IProductCategoryService _productCategoryService;
+	[RoutePrefix("api/productCategory")]
+	public class ProductCategoryController : ApiControllerBase
+	{
+		IProductCategoryService _productCategoryService;
 
-        public ProductCategoryController(ILogError errorService, IProductCategoryService productCategoryService) : base(errorService)
-        {
-            _productCategoryService = productCategoryService;
-        }
+		public ProductCategoryController(ILogError errorService, IProductCategoryService productCategoryService) : base(errorService)
+		{
+			_productCategoryService = productCategoryService;
+		}
 
-        [Route("getList")]
-        public HttpResponseMessage GetAll(HttpRequestMessage request, int page, int pageSize)
-        {
-            return CreateHttpRes(request, () =>
-            {
-                int totalRow = 0;
-                var model = _productCategoryService.GetAll();
+		[Route("getList")]
+		public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageOfSize)
+		{
+			return CreateHttpRes(request, () =>
+			{
+				int totalRow = 0;
+				var model = _productCategoryService.GetAll(keyword);
 
-                totalRow = model.Count();
-                var query = model.OrderByDescending(x => x.CreatedDate).Skip(page * pageSize).Take(pageSize);
+				totalRow = model.Count();
+				var query = model.OrderByDescending(x => x.CreatedDate).Skip((page - 1) * pageOfSize).Take(pageOfSize);
 
-                var requestData = Mapper.Map<List<ProductCategoryModel>>(query);
+				var requestData = Mapper.Map<List<ProductCategoryModel>>(query);
 
-                var paginationSet = new PaginationSet<ProductCategoryModel>()
-                {
-                    Items = requestData,
-                    Page = page,
-                    TotalPage = (int)Math.Ceiling((decimal)totalRow / pageSize),
-                    TotalCount = totalRow
-                };
+				var paginationSet = new PaginationSet<ProductCategoryModel>()
+				{
+					Items = requestData,
+					Page = page,
+					PageSize = pageOfSize,
+					TotalCount = totalRow
+				};
 
-                var reponse = request.CreateResponse(HttpStatusCode.OK, paginationSet);
-                return reponse;
-            });
-        }
-    }
+				var reponse = request.CreateResponse(HttpStatusCode.OK, paginationSet);
+				return reponse;
+			});
+		}
+	}
 }
