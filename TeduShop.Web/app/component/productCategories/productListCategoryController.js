@@ -30,9 +30,7 @@
 			apiService.get('/api/productCategory/getlist', config, function (result) {
 				if (result.data.TotalCount === 0) {
 					notificationService.displayWarning('Không tìm sản phẩm nào.');
-				} else {
-					notificationService.displaySuccess('Đã tìm thấy ' + result.data.TotalCount + ' sản phẩm.');
-				}
+				} 
 
 				$scope.productCategories = result.data.Items;
 				$scope.page = result.data.Page;

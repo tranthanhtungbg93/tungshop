@@ -27,11 +27,6 @@ namespace TeduShop.Service.PostCategoryService
             _postCategory.Delete(id);
         }
 
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<PostCategory> GetAll()
         {
             return _postCategory.GetAll();

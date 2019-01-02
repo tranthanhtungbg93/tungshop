@@ -7,7 +7,7 @@ using TeduShop.Model.Model;
 
 namespace TeduShop.Service.PostCategoryService
 {
-    public interface IPostCategoryService : IDisposable
+    public interface IPostCategoryService
     {
         PostCategory Add(PostCategory category);
         void Update(PostCategory category);

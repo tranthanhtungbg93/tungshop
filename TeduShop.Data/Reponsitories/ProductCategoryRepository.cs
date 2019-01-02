@@ -11,7 +11,7 @@ namespace TeduShop.Data.Reponsitories
     }
     public class ProductCategoryRepository : ReponsitoryBase<ProductCategory>, IProductCategoryRespository
     {
-        public ProductCategoryRepository(DbFactory dbFactory) : base(dbFactory)
+        public ProductCategoryRepository(IDBFactory dbFactory) : base(dbFactory)
         {
 
         }

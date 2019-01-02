@@ -13,7 +13,7 @@ namespace TeduShop.Web.Infrastructure.Extenssion
         {
             postCategory.Alias = model.Alias;
             postCategory.CreatedBy = model.CreatedBy;
-            postCategory.CreatedDate = model.CreatedDate;
+            postCategory.CreatedDate = DateTime.Now;
             postCategory.Description = model.Description;
             postCategory.DisplayOrder = model.DisplayOrder;
             postCategory.HomeFlag = model.HomeFlag;
@@ -47,5 +47,24 @@ namespace TeduShop.Web.Infrastructure.Extenssion
             post.UpdatedBy = model.UpdatedBy;
             post.UpdatedDate = model.UpdatedDate;
         }
+
+		public static void AddProductCategory(this ProductCategory product , ProductCategoryModel model)
+		{
+			product.Alias = model.Alias;
+			product.CreatedBy = model.CreatedBy;
+			product.CreatedDate = DateTime.Now;
+			product.Description = model.Description;
+			product.DisplayOrder = model.DisplayOrder;
+			product.HomeFlag = model.HomeFlag;
+			product.ID = model.ID;
+			product.Image = model.Image;
+			product.MetaDescription = model.MetaDescription;
+			product.MetaKeyWord = model.MetaKeyWord;
+			product.Name = model.Name;
+			product.ParentID = model.ParentID;
+			product.Status = model.Status;
+			product.UpdatedBy = model.UpdatedBy;
+			product.UpdatedDate = model.UpdatedDate;
+		}
     }
 }

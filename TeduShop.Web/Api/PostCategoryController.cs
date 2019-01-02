@@ -26,7 +26,7 @@ namespace TeduShop.Web.Api
             return CreateHttpRes(req, () =>
             {
                 HttpResponseMessage res = null;
-                if (ModelState.IsValid)
+                if (!ModelState.IsValid)
                 {
                     req.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
                 }

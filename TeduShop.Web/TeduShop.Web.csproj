@@ -229,6 +229,8 @@
     <Content Include="app\app.js" />
     <Content Include="app\component\home\home.controller.js" />
     <Content Include="app\component\home\home.html" />
+    <Content Include="app\component\productCategories\addProductCategory\productCategoryAddController.js" />
+    <Content Include="app\component\productCategories\addProductCategory\productCategoryAddView.html" />
     <Content Include="app\component\productCategories\productCategory.module.js" />
     <Content Include="app\component\productCategories\productListCategoryController.js" />
     <Content Include="app\component\productCategories\productListCategoryView.html" />
