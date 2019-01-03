@@ -66,5 +66,24 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 			product.UpdatedBy = model.UpdatedBy;
 			product.UpdatedDate = model.UpdatedDate;
 		}
+
+		public static void UpdateProductCategory(this ProductCategory product, ProductCategoryModel model)
+		{
+			product.Alias = model.Alias;
+			product.CreatedBy = model.CreatedBy;
+			product.CreatedDate = DateTime.Now;
+			product.Description = model.Description;
+			product.DisplayOrder = model.DisplayOrder;
+			product.HomeFlag = model.HomeFlag;
+			product.ID = model.ID;
+			product.Image = model.Image;
+			product.MetaDescription = model.MetaDescription;
+			product.MetaKeyWord = model.MetaKeyWord;
+			product.Name = model.Name;
+			product.ParentID = model.ParentID;
+			product.Status = model.Status;
+			product.UpdatedBy = model.UpdatedBy;
+			product.UpdatedDate = DateTime.Now;
+		}
     }
 }

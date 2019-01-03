@@ -40,6 +40,22 @@ namespace TeduShop.Web.Api
 			});
 		}
 
+		[Route("getbyid/{id:int}")]
+		[HttpGet]
+		public HttpResponseMessage GetById(HttpRequestMessage request, int id)
+		{
+			return CreateHttpRes(request, () =>
+			{
+				var model = _productCategoryService.GetById(id);
+
+				var requestData = Mapper.Map<ProductCategory, ProductCategoryModel>(model);
+
+				var reponse = request.CreateResponse(HttpStatusCode.OK, requestData);
+
+				return reponse;
+			});
+		}
+
 		[Route("getList")]
 		[HttpGet]
 		public HttpResponseMessage GetAll(HttpRequestMessage request, string keyword, int page, int pageOfSize)
@@ -88,6 +104,34 @@ namespace TeduShop.Web.Api
 					_productCategoryService.SaveChange();
 
 					res = request.CreateResponse(HttpStatusCode.Created, result);
+				}
+				return res;
+			});
+		}
+
+		[Route("update")]
+		[HttpPut]
+		[AllowAnonymous]
+		public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryModel model)
+		{
+			return CreateHttpRes(request, () =>
+			{
+				HttpResponseMessage res = null;
+				if (!ModelState.IsValid)
+				{
+					res = request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+				}
+				else
+				{
+					var newProductCategory = _productCategoryService.GetById(model.ID);
+					newProductCategory.UpdateProductCategory(model);
+
+					_productCategoryService.Update(newProductCategory);
+					_productCategoryService.SaveChange();
+
+					var reponseData = Mapper.Map<ProductCategory, ProductCategoryModel>(newProductCategory);
+
+					res = request.CreateResponse(HttpStatusCode.OK, reponseData);
 				}
 				return res;
 			});
