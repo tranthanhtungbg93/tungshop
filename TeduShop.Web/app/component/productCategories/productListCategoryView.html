@@ -26,8 +26,8 @@
 				<div class="col-md-6">
 					<button class="btn btn-sm btn-primary" ui-sref="product_add_category">Thêm mới sản phẩm</button>
 				</div>
-				</div>
 			</div>
+		</div>
 		<!-- Main content -->
 		<section class="content">
 			<div class="row">
@@ -53,37 +53,26 @@
 								</td>
 								<td>
 									<button class="btn btn-sm btn-primary" ui-sref="product_update_category({id:item.ID})"><i class="fa fa-pencil"></i></button>
-									<button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+									<button class="btn btn-sm btn-danger" ng-confirm-click="Bạn có chắc là muốn xóa sản phẩm này không ?" confirmed-click="DeleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
 								</td>
 							</tr>
 						</tbody>
-						<tfoot>
-							<tr>
-								<td colspan="5">
-									<span class="pull-right">
-										Trang : {{page}} - Tổng số bản ghi : {{totalCount}}
-									</span>
-								</td>
-							</tr>
-						</tfoot>
 					</table>
-					<div class="box-footer">
-						<!--<pager-directive page="{{page}}" custom-path="{{customPath}}" direction-links="true" boundary-links="true"
-						pages-count="{{pagesCount}}" total-count="{{totalCount}}"
-						search-func="getProductCategories(page)"></pager-directive>-->
-						<paging class="small"
-								page="page"
-								page-size="pageSize"
-								total="totalCount"
-								show-prev-next="true"
-								show-first-last="true"
-								paging-action="getProductCategories(page,pageSize,totalCount)"
-								text-next-class="glyphicon glyphicon-chevron-right"
-								text-prev-class="glyphicon glyphicon-chevron-left"
-								text-first-class="glyphicon glyphicon-backward"
-								text-last-class="glyphicon glyphicon-forward">
-						</paging>
-					</div>
+					<paging class="small"
+							page="page"
+							page-size="pageSize"
+							total="totalCount"
+							show-prev-next="true"
+							show-first-last="true"
+							paging-action="getProductCategories(page,pageSize,totalCount)"
+							text-next-class="glyphicon glyphicon-chevron-right"
+							text-prev-class="glyphicon glyphicon-chevron-left"
+							text-first-class="glyphicon glyphicon-backward"
+							text-last-class="glyphicon glyphicon-forward">
+					</paging>
+					<span class="pull-right">
+						Trang : {{page}} - Tổng số bản ghi : {{totalCount}}
+					</span>
 				</div>
 				<!-- /.col -->
 			</div>

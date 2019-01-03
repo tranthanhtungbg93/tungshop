@@ -26,9 +26,9 @@ namespace TeduShop.Service.ProductService
 			return _productCategoryRepository.Add(category);
 		}
 
-		public void Delete(int id)
+		public ProductCategory Delete(int id)
 		{
-			_productCategoryRepository.Delete(id);
+			return _productCategoryRepository.Delete(id);
 		}
 
 		public void Dispose()

@@ -12,11 +12,17 @@ namespace TeduShop.Web.Models
         public int ID { set; get; }
 		[Required]
         public string Name { set; get; }
-        public string Alias { set; get; }
-        public string Description { set; get; }
-        public int? ParentID { set; get; }
-        public int? DisplayOrder { set; get; }
-        public string Image { set; get; }
+		[Required]
+		public string Alias { set; get; }
+		[Required]
+		[MaxLength(500)]
+		public string Description { set; get; }
+		[Required]
+		public int? ParentID { set; get; }
+		[Required]
+		public int? DisplayOrder { set; get; }
+		[Required]
+		public string Image { set; get; }
         public bool? HomeFlag { set; get; }
         public virtual IEnumerable<ProductModel> Products { set; get; }
 		public DateTime? CreatedDate { get; set; }
@@ -24,8 +30,10 @@ namespace TeduShop.Web.Models
 		public DateTime? UpdatedDate { get; set; }
 		public string UpdatedBy { get; set; }
 		[Required]
+		[MaxLength(256)]
 		public string MetaKeyWord { get; set; }
 		[Required]
+		[MaxLength(256)]
 		public string MetaDescription { get; set; }
 		[Required]
 		public bool Status { get; set; }

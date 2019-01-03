@@ -12,6 +12,22 @@
 		$scope.keyword = '';
 
 		$scope.search = search;
+		$scope.DeleteProductCategory = DeleteProductCategory;
+
+		function DeleteProductCategory(id) {
+				var config = {
+					params: {
+						id: id
+					}
+				};
+
+				apiService.del('/api/productCategory/delete', config, function (result) {
+					notificationService.displaySuccess('Xóa sản phẩm thành công.');
+					search();
+				}, function (error) {
+					notificationService.displayError('Xóa không thành công.');
+				});
+		}
 
 		function search() {
 			$scope.getProductCategories();

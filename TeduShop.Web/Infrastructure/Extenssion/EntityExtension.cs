@@ -71,7 +71,7 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 		{
 			product.Alias = model.Alias;
 			product.CreatedBy = model.CreatedBy;
-			product.CreatedDate = DateTime.Now;
+			product.CreatedDate = model.CreatedDate;
 			product.Description = model.Description;
 			product.DisplayOrder = model.DisplayOrder;
 			product.HomeFlag = model.HomeFlag;

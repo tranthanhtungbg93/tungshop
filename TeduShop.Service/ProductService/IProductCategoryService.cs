@@ -11,7 +11,7 @@ namespace TeduShop.Service.ProductService
     {
         ProductCategory Add(ProductCategory category);
         void Update(ProductCategory category);
-        void Delete(int id);
+		ProductCategory Delete(int id);
         IEnumerable<ProductCategory> GetAll();
 		IEnumerable<ProductCategory> GetAll(string keyword);
 		IEnumerable<ProductCategory> GetAllbyParentID(int parentId);

@@ -11,7 +11,7 @@ namespace TeduShop.Service.PostCategoryService
     {
         PostCategory Add(PostCategory category);
         void Update(PostCategory category);
-        void Delete(int id);
+		PostCategory Delete(int id);
         IEnumerable<PostCategory> GetAll();
         IEnumerable<PostCategory> GetAllbyParentID(int parentId);
         PostCategory GetById(int id);

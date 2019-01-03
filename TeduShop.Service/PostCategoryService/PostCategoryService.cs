@@ -22,9 +22,9 @@ namespace TeduShop.Service.PostCategoryService
             return _postCategory.Add(category);
         }
 
-        public void Delete(int id)
+        public PostCategory Delete(int id)
         {
-            _postCategory.Delete(id);
+            return _postCategory.Delete(id);
         }
 
         public IEnumerable<PostCategory> GetAll()
