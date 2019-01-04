@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "angular": "~1.5.5",
-    "angular-ui-router": "~0.2.18",
+    "angular-ui-router": "~1.0.20",
     "bootstrap-slider": "*",
     "chart.js": "1.0.*",
     "ckeditor": "^4.7.0",

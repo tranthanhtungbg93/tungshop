@@ -38,6 +38,14 @@
 			});
 		}
 
+		$scope.ChooseImage = function () {
+			var finder = new CKFinder();
+			finder.selectActionFunction = function (urlFile) {
+				$scope.product.Image = urlFile;
+			};
+			finder.popup();
+		};
+
 		loadproductCategories();
 	}
 })(angular.module('tedushop.product'));
