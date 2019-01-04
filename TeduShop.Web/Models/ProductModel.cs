@@ -6,7 +6,7 @@ using TeduShop.Model.Abstract;
 
 namespace TeduShop.Web.Models
 {
-    public class ProductModel 
+    public class ProductModel
     {
         public int ID { get; set; }
         public string Name { set; get; }
