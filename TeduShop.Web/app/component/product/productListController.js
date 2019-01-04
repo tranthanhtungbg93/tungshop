@@ -11,7 +11,7 @@
 		$scope.keyword = '';
 
 		$scope.search = search;
-		$scope.DeleteProductCategory = DeleteProductCategory;
+		$scope.DeleteProduct = DeleteProduct;
 
 		$scope.checkAll = checkAll;
 		$scope.isAll = false;
@@ -60,7 +60,7 @@
 			}
 		}, true);
 
-		function DeleteProductCategory(id) {
+		function DeleteProduct(id) {
 			var config = {
 				params: {
 					id: id

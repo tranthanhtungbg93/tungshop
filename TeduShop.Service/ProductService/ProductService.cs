@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TeduShop.Common;
 using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Reponsitories;
 using TeduShop.Model.Model;
@@ -13,17 +14,43 @@ namespace TeduShop.Service.ProductCategoryService
 	{
 		IUnitOfWork _unitOfWork;
 		IProductRepository _productRepository;
+		ITagRepository _tagRepository;
+		IProductTagRepository _productTagRespository;
 
-
-		public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork)
+		public ProductService(IProductTagRepository productTagRespository, ITagRepository tagRepository, IProductRepository productRepository, IUnitOfWork unitOfWork)
 		{
 			_productRepository = productRepository;
 			_unitOfWork = unitOfWork;
+			_tagRepository = tagRepository;
+			_productTagRespository = productTagRespository;
 		}
 
-		public Product Add(Product category)
+		public Product Add(Product product)
 		{
-			return _productRepository.Add(category);
+			var result = _productRepository.Add(product);
+			_unitOfWork.Commit();
+			if (!string.IsNullOrEmpty(product.Tags))
+			{
+				string[] tags = product.Tags.Split(',');
+				for (var i = 0; i < tags.Length; i++)
+				{
+					var tagId = StringHelper.ToUnsignString(tags[i]);
+					if (_tagRepository.Count(x => x.ID == tagId) == 0)
+					{
+						Tag tag = new Tag();
+						tag.ID = tagId;
+						tag.Name = tags[i];
+						tag.Type = CommonConstant.ProductTag;
+						_tagRepository.Add(tag);
+					}
+
+					ProductTag productTag = new ProductTag();
+					productTag.ProductID = product.ID;
+					productTag.TagID = tagId;
+					_productTagRespository.Add(productTag);
+				}
+			}
+			return result;
 		}
 
 		public Product Delete(int id)
@@ -65,9 +92,32 @@ namespace TeduShop.Service.ProductCategoryService
 			_unitOfWork.Commit();
 		}
 
-		public void Update(Product category)
+		public void Update(Product product)
 		{
-			_productRepository.Update(category);
+			_productRepository.Update(product);
+			if (!string.IsNullOrEmpty(product.Tags))
+			{
+				string[] tags = product.Tags.Split(',');
+				for (var i = 0; i < tags.Length; i++)
+				{
+					var tagId = StringHelper.ToUnsignString(tags[i]);
+					if (_tagRepository.Count(x => x.ID == tagId) == 0)
+					{
+						Tag tag = new Tag();
+						tag.ID = tagId;
+						tag.Name = tags[i];
+						tag.Type = CommonConstant.ProductTag;
+						_tagRepository.Add(tag);
+					}
+					_productTagRespository.DeleteMulti(x=>x.ProductID == product.ID);
+					ProductTag productTag = new ProductTag();
+					productTag.ProductID = product.ID;
+					productTag.TagID = tagId;
+					_productTagRespository.Add(productTag);
+				}
+				
+			}
+			_unitOfWork.Commit();
 		}
 	}
 }

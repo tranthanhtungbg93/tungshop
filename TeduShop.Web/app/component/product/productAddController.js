@@ -22,16 +22,16 @@
 		}
 
 		function AddProduct() {
-			apiService.post('/api/productCategory/create', $scope.product, function (result) {
+			apiService.post('/api/product/create', $scope.product, function (result) {
 				notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
-				$state.go('product_add');
+				$state.go('product_list');
 			}, function (error) {
 				notificationService.displayError('Thêm mới sản phẩm không thành công.');
 			});
 		}
 
 		function loadproductCategories() {
-			apiService.get('/api/productCategory/loadListDanhMuc', null, function (result) {
+			apiService.get('/api/product/loadListDanhMuc', null, function (result) {
 				$scope.productCategories = result.data;
 			}, function () {
 				console.log('load fail list parent');

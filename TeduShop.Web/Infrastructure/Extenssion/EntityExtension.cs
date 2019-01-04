@@ -108,6 +108,7 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 			product.UpdatedDate = model.UpdatedDate;
 			product.ViewCount = model.ViewCount;
 			product.Warranty = model.Warranty;
+			product.Tags = model.Tags;
 		}
 
 		public static void UpdateProduct(this Product product, ProductModel model)
@@ -132,6 +133,7 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 			product.UpdatedDate = DateTime.Now;
 			product.ViewCount = model.ViewCount;
 			product.Warranty = model.Warranty;
+			product.Tags = model.Tags;
 		}
 	}
 }

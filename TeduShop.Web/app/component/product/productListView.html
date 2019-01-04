@@ -59,8 +59,8 @@
                                                      'badge bg-green' : item.Status == true}">{{item.Status | statusFilter}}</span>
 								</td>
 								<td>
-									<button class="btn btn-sm btn-primary" ui-sref="product_update_category({id:item.ID})"><i class="fa fa-pencil"></i></button>
-									<button class="btn btn-sm btn-danger" ng-confirm-click="Bạn có chắc là muốn xóa sản phẩm này không ?" confirmed-click="DeleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
+									<button class="btn btn-sm btn-primary" ui-sref="product_edit({id:item.ID})"><i class="fa fa-pencil"></i></button>
+									<button class="btn btn-sm btn-danger" ng-confirm-click="Bạn có chắc là muốn xóa sản phẩm này không ?" confirmed-click="DeleteProduct(item.ID)"><i class="fa fa-trash"></i></button>
 								</td>
 							</tr>
 						</tbody>

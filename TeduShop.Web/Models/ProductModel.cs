@@ -22,6 +22,7 @@ namespace TeduShop.Web.Models
         public bool? HomeFlag { set; get; }
         public bool? HotFlag { get; set; }
         public int? ViewCount { get; set; }
+		public string Tags { get; set; }
 
         public virtual IEnumerable<ProductCategoryModel> ProductCategories { set; get; }
     }

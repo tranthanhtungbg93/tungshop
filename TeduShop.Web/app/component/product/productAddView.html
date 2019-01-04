@@ -40,7 +40,7 @@
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="email">Mô tả ngắn:</label>
 							<div class="col-sm-10">
-								<input type="text" class="form-control" name="description"  ng-maxlength="500" placeholder="Mô tả" ng-model="product.Description">
+								<input type="text" class="form-control" name="description" ng-maxlength="500" placeholder="Mô tả" ng-model="product.Description">
 								<!--<span ng-show="formAddProduct.description.$invalid" class="has-error">Mô tả không được trống.</span>-->
 								<span ng-show="formAddProduct.description.$error.maxlength" class="has-error">Mô tả chỉ được nhập 500 ký tự.</span>
 							</div>
@@ -50,7 +50,9 @@
 							<div class="col-sm-10">
 								<select class="form-control" name="cateforyID"
 										ng-model="product.CateforyID"
-										ng-options="option.ID as option.Name for option in parentCategories"></select>
+										ng-options="option.ID as option.Name for option in productCategories">
+									<option value="">Chọn danh mục</option>
+								</select>
 								<input type="hidden" name="cateforyID" required
 									   ng-model="product.CateforyID" />
 								<span ng-show="formAddProduct.cateforyID.$invalid" class="has-error">Danh mục cha không được trống.</span>
@@ -96,10 +98,20 @@
 							<label class="control-label col-sm-2" for="email">Nội dung sản phẩm:</label>
 							<div class="col-sm-10">
 								<textarea type="text" class="form-control"
-										  name="content"  ckeditor="ckeditorOption" id=""
+										  name="content" ckeditor="ckeditorOption" id=""
 										  ng-model="product.Content"></textarea>
 								<!--<span ng-show="formAddProduct.content.$invalid" class="has-error">Meta Description không được trống.</span>-->
 								<span ng-show="formAddProduct.content.$error.maxlength" class="has-error">Meta Keyword không được trống.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2">Tags :</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" required ng-maxlength="256"
+									   name="tags"
+									   ng-model="product.Tags">
+								<!--<span ng-show="formAddProduct.metaKeyword.$invalid" class="has-error">Meta Keyword không được trống.</span>-->
+								<span ng-show="formAddProduct.tags.$error.maxlength" class="has-error">tag không được trống.</span>
 							</div>
 						</div>
 						<div class="form-group">
