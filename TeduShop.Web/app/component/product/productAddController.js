@@ -22,6 +22,7 @@
 		}
 
 		function AddProduct() {
+			$scope.product.MoreImages = JSON.stringify($scope.moreImages);
 			apiService.post('/api/product/create', $scope.product, function (result) {
 				notificationService.displaySuccess(result.data.Name + ' đã được thêm mới.');
 				$state.go('product_list');
@@ -41,7 +42,20 @@
 		$scope.ChooseImage = function () {
 			var finder = new CKFinder();
 			finder.selectActionFunction = function (urlFile) {
-				$scope.product.Image = urlFile;
+				$scope.$apply(function () {
+					$scope.product.Image = urlFile;
+				});
+			};
+			finder.popup();
+		};
+
+		$scope.moreImages = [];
+		$scope.ChooseMoreImage = function () {
+			var finder = new CKFinder();
+			finder.selectActionFunction = function (urlFile) {
+				$scope.$apply(function () {  //$apply chọn ảnh xong lên luôn (cần search GG)
+					$scope.moreImages.push(urlFile);
+				});
 			};
 			finder.popup();
 		};
