@@ -43,7 +43,8 @@ namespace TeduShop.Data.Migrations
 
             //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
             AddProductCategory(context);
-        }
+			AddProduct(context);
+		}
 
         public void AddProductCategory(TeduShop.Data.TeduShopDbContext context)
         {
@@ -91,5 +92,51 @@ namespace TeduShop.Data.Migrations
                 context.SaveChanges();
             }
         }
-    }
+		public void AddProduct(TeduShop.Data.TeduShopDbContext context){
+			if (context.Products.Count() == 0)
+			{
+				List<Product> list = new List<Product>() {
+				new Product()
+				{
+					Name = "Laptop",
+					Alias="abc",
+					Status=true
+				},
+				new Product()
+				{
+					Name = "Ram",
+					Alias="abc",
+					Status=true
+				},
+				new Product()
+				{
+					Name = "Card man hinh",
+					Alias="abc",
+					Status=true
+				},
+				new Product()
+				{
+					Name = "G-shock",
+					Alias="abc",
+					Status=true
+				},
+				new Product()
+				{
+					Name = "My tom tre con",
+					Alias="abc",
+					Status=true
+				},
+				new Product()
+				{
+					Name = "Iphone XXX",
+					Alias="abc",
+					Status=true
+				},
+			};
+				context.Products.AddRange(list);
+				context.SaveChanges();
+			}
+		}
+
+	}
 }

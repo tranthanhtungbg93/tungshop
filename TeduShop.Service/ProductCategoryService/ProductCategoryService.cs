@@ -7,7 +7,7 @@ using TeduShop.Data.Infrastructure;
 using TeduShop.Data.Reponsitories;
 using TeduShop.Model.Model;
 
-namespace TeduShop.Service.ProductService
+namespace TeduShop.Service.ProductCategoryService
 {
 	public class ProductCategoryService : IProductCategoryService
 	{

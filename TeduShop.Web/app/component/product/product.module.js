@@ -8,7 +8,7 @@
         $stateProvider.state('product_list', {
             url: "/product_list",
             templateUrl: "/app/component/product/productListView.html",
-            controller: "productListController"
+			controller: "productListController"
         }).state('product_edit', {
             url: "/product_edit",
             templateUrl: "/app/component/product/productEditView.html",

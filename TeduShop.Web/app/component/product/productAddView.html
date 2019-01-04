@@ -1,1 +1,175 @@
-﻿<h1>add vie444444w</h1>
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		THÊM SẢN PHẨM
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+		<li><a href="#">Sản phẩm</a></li>
+		<li><a ui-sref="product_add_category">Thêm sản phẩm</a></li>
+	</ol>
+</section>
+<!-- Main content -->
+<!-- Default box -->
+<div class="box">
+	<div class="box-body">
+		<div class="row">
+
+		</div>
+		<!-- Main content -->
+		<section class="content">
+			<div class="row">
+				<div class="col-xs-12">
+					<form class="form-horizontal" novalidate name="formAddProduct" role="form" ng-submit="AddProduct()">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Tên danh mục:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" ng-change="GetSeoTitle()" required ng-maxlength="256" name="name" placeholder="Tên danh mục" ng-model="product.Name">
+								<span ng-show="formAddProduct.name.$invalid" class="has-error">Tên danh mục không được trống.</span>
+								<span ng-show="formAddProduct.name.$error.maxlength" class="has-error">Tên danh mục chỉ được nhập 256 ký tự.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Tiêu đề CEO:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="alias" required ng-maxlength="256" placeholder="Tiêu đề CEO" ng-model="product.Alias">
+								<span ng-show="formAddProduct.alias.$invalid" class="has-error">Tiêu đề CEO không được trống.</span>
+								<span ng-show="formAddProduct.alias.$error.maxlength" class="has-error">Tiêu đề CEO chỉ được nhập 256 ký tự.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Mô tả ngắn:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="description"  ng-maxlength="500" placeholder="Mô tả" ng-model="product.Description">
+								<!--<span ng-show="formAddProduct.description.$invalid" class="has-error">Mô tả không được trống.</span>-->
+								<span ng-show="formAddProduct.description.$error.maxlength" class="has-error">Mô tả chỉ được nhập 500 ký tự.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="pwd">Danh mục:</label>
+							<div class="col-sm-10">
+								<select class="form-control" name="cateforyID"
+										ng-model="product.CateforyID"
+										ng-options="option.ID as option.Name for option in parentCategories"></select>
+								<input type="hidden" name="cateforyID" required
+									   ng-model="product.CateforyID" />
+								<span ng-show="formAddProduct.cateforyID.$invalid" class="has-error">Danh mục cha không được trống.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Bảo hành:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" name="Warranty" required ng-maxlength="500" placeholder="Mô tả" ng-model="product.Warranty">
+								<!--<span ng-show="formAddProduct.Warranty.$invalid" class="has-error">Mô tả không được trống.</span>-->
+								<span ng-show="formAddProduct.Warranty.$error.maxlength" class="has-error">Mô tả chỉ được nhập 500 ký tự.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Giá:</label>
+							<div class="col-sm-10">
+								<input type="number" class="form-control"
+									   name="price" placeholder="Thứ tự"
+									   ng-model="product.Price">
+								<!--<span ng-show="formAddProduct.price.$invalid" class="has-error">Giá không được trống.</span>-->
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Giá KM:</label>
+							<div class="col-sm-10">
+								<input type="number" class="form-control"
+									   name="promotionPrice" placeholder="Thứ tự"
+									   ng-model="product.PromotionPrice">
+								<!--<span ng-show="formAddProduct.promotionPrice.$invalid" class="has-error">Giá KM không được trống.</span>-->
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Hình ảnh:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" required
+									   name="image" placeholder="Hình ảnh"
+									   ng-model="product.Image">
+								<!--<span ng-show="formAddProduct.image.$invalid" class="has-error">Hình ảnh không được trống.</span>-->
+
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Nội dung sản phẩm:</label>
+							<div class="col-sm-10">
+								<textarea type="text" class="form-control"
+										  name="content"  ckeditor="ckeditorOption"
+										  ng-model="product.Content"></textarea>
+								<!--<span ng-show="formAddProduct.content.$invalid" class="has-error">Meta Description không được trống.</span>-->
+								<span ng-show="formAddProduct.content.$error.maxlength" class="has-error">Meta Keyword không được trống.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Meta Keyword:</label>
+							<div class="col-sm-10">
+								<input type="text" class="form-control" required ng-maxlength="256"
+									   name="metaKeyword" placeholder="Meta Keyword"
+									   ng-model="product.MetaKeyWord">
+								<!--<span ng-show="formAddProduct.metaKeyword.$invalid" class="has-error">Meta Keyword không được trống.</span>-->
+								<span ng-show="formAddProduct.metaKeyword.$error.maxlength" class="has-error">Meta Keyword không được trống.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Meta Description:</label>
+							<div class="col-sm-10">
+								<textarea type="text" class="form-control" required ng-maxlength="256"
+										  name="metaDescription" placeholder="Meta Descriptionl"
+										  ng-model="product.MetaDescription"></textarea>
+								<!--<span ng-show="formAddProduct.metaDescription.$invalid" class="has-error">Meta Description không được trống.</span>-->
+								<span ng-show="formAddProduct.metaDescription.$error.maxlength" class="has-error">Meta Keyword không được trống.</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="status"
+											   ng-model="product.Status"
+											   ng-checked="product.Status"> Kích hoạt
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="homeFlag"
+											   ng-model="product.HomeFlag"
+											   ng-checked="product.HomeFlag"> Hiển thị trang chủ
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" name="homeFlag"
+											   ng-model="product.HotFlag"
+											   ng-checked="product.HotFlag"> Hiển thị SP Hot
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-default">Submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- /.col -->
+			</div>	
+			<!-- /.row -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.box-body -->
+	<!-- /.box-footer-->
+</div>
+<!-- /.box -->
+<!-- /.content -->
