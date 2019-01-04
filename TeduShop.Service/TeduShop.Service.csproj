@@ -53,8 +53,10 @@
     <Compile Include="PostCategoryService\PostCategoryService.cs" />
     <Compile Include="PostService\IPostService.cs" />
     <Compile Include="PostService\PostService.cs" />
-    <Compile Include="ProductService\IProductCategoryService.cs" />
-    <Compile Include="ProductService\ProductCategoryService.cs" />
+    <Compile Include="ProductCategoryService\IProductCategoryService.cs" />
+    <Compile Include="ProductCategoryService\ProductCategoryService.cs" />
+    <Compile Include="ProductService\IProductService.cs" />
+    <Compile Include="ProductService\ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,5 +80,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

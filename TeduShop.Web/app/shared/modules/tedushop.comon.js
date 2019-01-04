@@ -1,3 +1,3 @@
 ﻿(function () {
-	angular.module('tedushop.common', ['ui.router', 'bw.paging']);
+	angular.module('tedushop.common', ['ui.router', 'bw.paging','ngCkeditor']);
 })();

@@ -85,5 +85,53 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 			product.UpdatedBy = model.UpdatedBy;
 			product.UpdatedDate = DateTime.Now;
 		}
-    }
+
+		public static void AddProduct(this Product product, ProductModel model)
+		{
+			product.Alias = model.Alias;
+			product.CateforyID = model.CateforyID;
+			product.Content = model.Content;
+			product.CreatedBy = model.CreatedBy;
+			product.CreatedDate = DateTime.Now;
+			product.Description = model.Description;
+			product.HomeFlag = model.HomeFlag;
+			product.HotFlag = model.HotFlag;
+			product.ID = model.ID;
+			product.Image = model.Image;
+			product.MetaDescription = model.MetaDescription;
+			product.MetaKeyWord = model.MetaKeyWord;
+			product.MoreImages = model.MoreImages;
+			product.Name = model.Name;
+			product.Price = model.Price;
+			product.PromotionPrice = model.PromotionPrice;
+			product.UpdatedBy = model.UpdatedBy;
+			product.UpdatedDate = model.UpdatedDate;
+			product.ViewCount = model.ViewCount;
+			product.Warranty = model.Warranty;
+		}
+
+		public static void UpdateProduct(this Product product, ProductModel model)
+		{
+			product.Alias = model.Alias;
+			product.CateforyID = model.CateforyID;
+			product.Content = model.Content;
+			product.CreatedBy = model.CreatedBy;
+			product.CreatedDate = model.CreatedDate;
+			product.Description = model.Description;
+			product.HomeFlag = model.HomeFlag;
+			product.HotFlag = model.HotFlag;
+			product.ID = model.ID;
+			product.Image = model.Image;
+			product.MetaDescription = model.MetaDescription;
+			product.MetaKeyWord = model.MetaKeyWord;
+			product.MoreImages = model.MoreImages;
+			product.Name = model.Name;
+			product.Price = model.Price;
+			product.PromotionPrice = model.PromotionPrice;
+			product.UpdatedBy = model.UpdatedBy;
+			product.UpdatedDate = DateTime.Now;
+			product.ViewCount = model.ViewCount;
+			product.Warranty = model.Warranty;
+		}
+	}
 }

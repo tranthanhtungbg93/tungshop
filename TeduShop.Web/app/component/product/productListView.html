@@ -1,1 +1,94 @@
-﻿<h1>list View</h1>
+﻿<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		SẢN PHẨM
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i>Trang chủ</a></li>
+		<li><a href="#">Danh sách sản phẩm</a></li>
+		<!--<li class="active">Danh mục sản phẩm</li>-->
+	</ol>
+</section>
+<!-- Main content -->
+<!-- Default box -->
+<div class="box">
+	<div class="box-body">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="col-md-6">
+					<div class="input-group">
+						<input type="text" class="form-control" ng-model="keyword" placeholder="Tìm kiếm sản phẩm..." />
+						<span class="input-group-btn">
+							<button class="btn btn-default" type="button" ng-click="search()">Tìm kiếm</button>
+						</span>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<button class="btn btn-sm btn-primary" ui-sref="product_add">Thêm mới sản phẩm</button>
+					<button class="btn btn-sm btn-danger" ng-click="deleteMulti()" id="btnDelete" disabled>Xóa</button>
+				</div>
+			</div>
+		</div>
+		<!-- Main content -->
+		<section class="content">
+			<div class="row">
+				<div class="col-xs-12">
+					<table class="table table-bordered">
+						<tbody>
+							<tr>
+								<th style="width: 2%" class="text-center">
+									<input type="checkbox" name="all" ng-click="checkAll()">
+								</th>
+								<th style="width: 5%" class="text-center">TT</th>
+								<th class="text-center">Tên sản phẩm</th>
+								<th class="text-center">Ngày tạo</th>
+								<th style="width:105px" class="text-center">Trạng thái</th>
+								<th style="width:105px" class="text-center">Thao tác</th>
+							</tr>
+							<tr ng-repeat="item in products track by $index">
+								<td style="width: 2%" class="text-center">
+									<input type="checkbox" name="all" ng-model="item.checked">
+								</td>
+								<td>{{(page - 1)*pageSize + (1 + $index)}}</td>
+								<td>{{item.Name}}</td>
+								<td>
+									{{item.CreatedDate | date:'dd-MM-yyyy HH: mm'}}
+								</td>
+								<td>
+									<span ng-class="{'badge bg-red' : item.Status == false,
+                                                     'badge bg-green' : item.Status == true}">{{item.Status | statusFilter}}</span>
+								</td>
+								<td>
+									<button class="btn btn-sm btn-primary" ui-sref="product_update_category({id:item.ID})"><i class="fa fa-pencil"></i></button>
+									<button class="btn btn-sm btn-danger" ng-confirm-click="Bạn có chắc là muốn xóa sản phẩm này không ?" confirmed-click="DeleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<paging class="small"
+							page="page"
+							page-size="pageSize"
+							total="totalCount"
+							show-prev-next="true"
+							show-first-last="true"
+							paging-action="getProducts(page,pageSize,totalCount)"
+							text-next-class="glyphicon glyphicon-chevron-right"
+							text-prev-class="glyphicon glyphicon-chevron-left"
+							text-first-class="glyphicon glyphicon-backward"
+							text-last-class="glyphicon glyphicon-forward">
+					</paging>
+					<span class="pull-right">
+						Trang : {{page}} - Tổng số bản ghi : {{totalCount}}
+					</span>
+				</div>
+				<!-- /.col -->
+			</div>
+			<!-- /.row -->
+		</section>
+		<!-- /.content -->
+	</div>
+	<!-- /.box-body -->
+	<!-- /.box-footer-->
+</div>
+<!-- /.box -->
+<!-- /.content -->

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TeduShop.Model.Model;
 
-namespace TeduShop.Service.ProductService
+namespace TeduShop.Service.ProductCategoryService
 {
     public interface IProductCategoryService
     {
