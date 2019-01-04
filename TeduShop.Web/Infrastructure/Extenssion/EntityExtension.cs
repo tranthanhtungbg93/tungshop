@@ -134,6 +134,7 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 			product.ViewCount = model.ViewCount;
 			product.Warranty = model.Warranty;
 			product.Tags = model.Tags;
+			product.Status = model.Status
 		}
 	}
 }
