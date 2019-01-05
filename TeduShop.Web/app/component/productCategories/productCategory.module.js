@@ -8,15 +8,18 @@
 		$stateProvider.state('product_list_category', {
 			url: "/product_list_category",
 			templateUrl: "/app/component/productCategories/productListCategoryView.html",
-			controller: "productCategoryListController"
+			controller: "productCategoryListController",
+			parent: 'base'
 		}).state('product_add_category', {
 			url: "/product_add_category",
 			templateUrl: "/app/component/productCategories/addProductCategory/productCategoryAddView.html",
-			controller: "productCategoryAddController"
+			controller: "productCategoryAddController",
+			parent: 'base'
 		}).state('product_update_category', {
 			url: "/product_update_category/:id",
 			templateUrl: "/app/component/productCategories/update/productCategoryUpdateView.html",
-			controller: "productCategoryUpdateController"
+			controller: "productCategoryUpdateController",
+			parent: 'base'
 		});
 	}
 })();

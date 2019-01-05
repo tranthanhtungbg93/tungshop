@@ -231,8 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
+    <Content Include="app\baseView\baseView.html" />
     <Content Include="app\component\home\home.controller.js" />
     <Content Include="app\component\home\home.html" />
+    <Content Include="app\component\login\login.css" />
+    <Content Include="app\component\login\login.html" />
+    <Content Include="app\component\login\loginController.js" />
     <Content Include="app\component\productCategories\addProductCategory\productCategoryAddController.js" />
     <Content Include="app\component\productCategories\addProductCategory\productCategoryAddView.html" />
     <Content Include="app\component\productCategories\productCategory.module.js" />
@@ -331,17 +335,6 @@
     <Content Include="Assets\Admin\libs\angular-paging\src\paging.js" />
     <Content Include="Assets\Admin\libs\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="Assets\Admin\libs\angular-ui-router\release\angular-ui-router.min.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\common.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\resolve.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\state.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\stateDirectives.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\stateFilters.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\templateFactory.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\urlMatcherFactory.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\urlRouter.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\view.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\viewDirective.js" />
-    <Content Include="Assets\Admin\libs\angular-ui-router\src\viewScroll.js" />
     <Content Include="Assets\Admin\libs\angular\angular-csp.css" />
     <Content Include="Assets\Admin\libs\angular\angular.js" />
     <Content Include="Assets\Admin\libs\angular\angular.min.js" />
@@ -7439,6 +7432,7 @@
     <Folder Include="app\component\user\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
+    <Folder Include="Assets\Admin\libs\angular-ui-router\src\" />
     <Folder Include="Assets\Admin\libs\ckfinder\bin\" />
     <Folder Include="Assets\Admin\libs\inputmask\dist\min\inputmask\bindings\" />
     <Folder Include="Assets\Admin\libs\inputmask\dist\min\inputmask\dependencyLibs\" />
