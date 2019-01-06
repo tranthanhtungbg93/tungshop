@@ -234,6 +234,7 @@
     <Content Include="app\baseView\baseView.html" />
     <Content Include="app\component\home\home.controller.js" />
     <Content Include="app\component\home\home.html" />
+    <Content Include="app\component\home\rootController.js" />
     <Content Include="app\component\login\login.css" />
     <Content Include="app\component\login\login.html" />
     <Content Include="app\component\login\loginController.js" />
@@ -8018,6 +8019,24 @@
     <Content Include="Assets\Admin\libs\ckeditor\skins\kama\readme.md" />
     <Content Include="Assets\Admin\libs\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Assets\Admin\libs\ckeditor\skins\moono\readme.md" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Black.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Bold.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Italic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Light.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Medium.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Regular.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-Thin.ttf" />
+    <Content Include="Assets\Admin\libs\poppins\Poppins-ThinItalic.ttf" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>

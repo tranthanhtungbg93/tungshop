@@ -12,7 +12,6 @@
 		}).state('login', {
 			url: "/login",
 			templateUrl: "/app/component/login/login.html",
-			css: "/app/component/login/login.css",
 			controller: "loginController"
 		}).state('home', {
 			url: "/home/index",
@@ -20,6 +19,6 @@
 			templateUrl: "/app/component/home/home.html",
 			controller: "homeController"
 		});
-		$urlRouterProvider.otherwise('/home/index');
+		$urlRouterProvider.otherwise('/login');
 	}
 })();

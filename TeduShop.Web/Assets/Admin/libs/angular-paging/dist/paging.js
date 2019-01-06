@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @ngDoc directive
  * @name ng.directive:paging
  *
@@ -139,11 +139,11 @@ angular.module('bw.paging', []).directive('paging', function () {
         scope.textNextClass = scope.textNextClass || '';
         scope.textPrevClass = scope.textPrevClass || '';
 
-        scope.textTitlePage = scope.textTitlePage || 'Page {page}';
-        scope.textTitleFirst = scope.textTitleFirst || 'First Page'; 
-        scope.textTitleLast = scope.textTitleLast || 'Last Page'; 
-        scope.textTitleNext = scope.textTitleNext || 'Next Page'; 
-        scope.textTitlePrev = scope.textTitlePrev || 'Previous Page'; 
+        scope.textTitlePage = scope.textTitlePage || 'Trang {page}';
+        scope.textTitleFirst = scope.textTitleFirst || 'Trang đầu tiên'; 
+        scope.textTitleLast = scope.textTitleLast || 'Trang cuối cùng'; 
+        scope.textTitleNext = scope.textTitleNext || 'Trang tiếp theo'; 
+        scope.textTitlePrev = scope.textTitlePrev || 'Trang trước'; 
 
         scope.hideIfEmpty = evalBoolAttribute(scope, attrs.hideIfEmpty);
         scope.showPrevNext = evalBoolAttribute(scope, attrs.showPrevNext);
