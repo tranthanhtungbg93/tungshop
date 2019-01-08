@@ -225,11 +225,13 @@
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extenssion\EntityExtension.cs" />
     <Compile Include="Models\FooterModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PostCategoryModel.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\PostTagModel.cs" />
     <Compile Include="Models\ProductCategoryModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\SlideModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -7511,6 +7513,32 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="libs\CKFinder.dll" />
+    <Content Include="UploadImage\files\207_master - Copy.jpg" />
+    <Content Include="UploadImage\files\27112_6430 - Copy.jpg" />
+    <Content Include="UploadImage\files\43208_1 - Copy.jpg" />
+    <Content Include="UploadImage\files\download %281%29 - Copy.jpg" />
+    <Content Include="UploadImage\files\download %282%29 - Copy.jpg" />
+    <Content Include="UploadImage\files\download %283%29 - Copy.jpg" />
+    <Content Include="UploadImage\files\download.jpg" />
+    <Content Include="UploadImage\files\F4-3000C15D-16GTZR-04 - Copy.jpg" />
+    <Content Include="UploadImage\files\F4-3000C15D-16GTZR-04.jpg" />
+    <Content Include="UploadImage\files\Kit-Ram-4-Kingston-Predator-RGB-16G-510x510.jpg" />
+    <Content Include="UploadImage\files\Screen_Shot_2018_06_05_at_9_05_21_AM_0 - Copy.png" />
+    <Content Include="UploadImage\files\Screen_Shot_2018_06_05_at_9_05_21_AM_0.png" />
+    <Content Include="UploadImage\files\tz-rgb2-1482402993843.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\207_master - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\27112_6430 - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\43208_1 - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\download %281%29 - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\download %282%29 - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\download %283%29 - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\download.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\F4-3000C15D-16GTZR-04 - Copy.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\F4-3000C15D-16GTZR-04.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\Kit-Ram-4-Kingston-Predator-RGB-16G-510x510.jpg" />
+    <Content Include="UploadImage\_thumbs\Files\Screen_Shot_2018_06_05_at_9_05_21_AM_0 - Copy.png" />
+    <Content Include="UploadImage\_thumbs\Files\Screen_Shot_2018_06_05_at_9_05_21_AM_0.png" />
+    <Content Include="UploadImage\_thumbs\Files\tz-rgb2-1482402993843.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -7533,7 +7561,8 @@
     <Folder Include="Assets\Admin\libs\inputmask\dist\min\inputmask\phone-codes\" />
     <Folder Include="Scripts\plugins\" />
     <Folder Include="Scripts\spa\" />
-    <Folder Include="UploadImage\" />
+    <Folder Include="UploadImage\flash\" />
+    <Folder Include="UploadImage\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
