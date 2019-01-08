@@ -7,7 +7,8 @@ namespace TeduShop.Data.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using TeduShop.Model.Model;
+	using TeduShop.Common;
+	using TeduShop.Model.Model;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TeduShop.Data.TeduShopDbContext>
     {
@@ -137,6 +138,12 @@ namespace TeduShop.Data.Migrations
 				context.SaveChanges();
 			}
 		}
-
+		private void ContentFooter(TeduShopDbContext context)
+		{
+			if(context.Footers.Count(x=> x.ID == CommonConstant.DefaultFooterID) == 0)
+			{
+				string content;
+			}
+		}
 	}
 }

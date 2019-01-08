@@ -224,6 +224,7 @@
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
     <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extenssion\EntityExtension.cs" />
+    <Compile Include="Models\FooterModel.cs" />
     <Compile Include="Models\PostCategoryModel.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\PostTagModel.cs" />
