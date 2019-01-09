@@ -5,7 +5,7 @@
 		<ul class="menu">
 			@foreach (var item in Model.Where(x => x.ParentID == null))
 			{
-				var url = "/" + item.Alias + "pc." + item.ID + ".html";
+				var url = "/" + item.Alias + ".pc-" + item.ID + ".html";
 				var childCategories = Model.Where(x => x.ParentID == item.ID);
 				<li class="item1">
 					<a href="@url">@item.Name @(childCategories.Count() > 0 ? 

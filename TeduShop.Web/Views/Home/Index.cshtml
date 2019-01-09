@@ -41,9 +41,7 @@
 			<div class="shoes-grid-left">
 				<a href="single.html">
 					<div class="col-md-6 con-sed-grid">
-
 						<div class=" elit-grid">
-
 							<h4>consectetur  elit</h4>
 							<label>FOR ALL PURCHASE VALUE</label>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, </p>
@@ -76,19 +74,19 @@
 			<div class="product-left">
 				@foreach (var item in Model.LastestProducts)
 				{
-					var url = "/" + item.Alias + "p." + item.ID + ".html";
+					var url = "/" + item.Alias + ".p-" + item.ID + ".html";
 					<div class="col-md-4 chain-grid">
-						<a href="single.html">@item.Image</a>
+						<a href="@url"><img class="img-responsive chain" src="@item.Image"/></a>
 						<span class="star"> </span>
 						<div class="grid-chain-bottom">
-							<h6><a href="single.html">@item.Name</a></h6>
+							<h6><a href="@url">@item.Name</a></h6>
 							<div class="star-price">
 								<div class="dolor-grid">
 									@if (item.PromotionPrice.HasValue)
 									{
-										<span class="actual">@item.PromotionPrice.Value.ToString("NO")</span>
+										<span class="actual">@item.PromotionPrice.Value.ToString()</span>
 									}
-									<span class="reducedfrom">@item.Price.ToString("NO")</span>
+									<span class="reducedfrom">@item.Price.ToString()</span>
 									<span class="rating">
 										<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
 										<label for="rating-input-1-5" class="rating-star1"> </label>
@@ -117,19 +115,19 @@
 			<div class="product-left">
 				@foreach (var item in Model.TopSaleProducts)
 				{
-					var url = "/" + item.Alias + "p." + item.ID + ".html";
+					var url = "/" + item.Alias + ".p-" + item.ID + ".html";
 					<div class="col-md-4 chain-grid">
-						<a href="single.html">@item.Image</a>
+						<a href="@url"><img class="img-responsive chain" src="@item.Image" /></a>
 						<span class="star"> </span>
 						<div class="grid-chain-bottom">
-							<h6><a href="single.html">@item.Name</a></h6>
+							<h6><a href="@url">@item.Name</a></h6>
 							<div class="star-price">
 								<div class="dolor-grid">
 									@if (item.PromotionPrice.HasValue)
 									{
-										<span class="actual">@item.PromotionPrice.Value.ToString("NO")</span>
+										<span class="actual">@item.PromotionPrice.Value.ToString()</span>
 									}
-									<span class="reducedfrom">@item.Price.ToString("NO")</span>
+									<span class="reducedfrom">@item.Price.ToString()</span>
 									<span class="rating">
 										<input type="radio" class="rating-input" id="rating-input-1-5" name="rating-input-1">
 										<label for="rating-input-1-5" class="rating-star1"> </label>
