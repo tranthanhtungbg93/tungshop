@@ -17,11 +17,8 @@ namespace TeduShop.Web.Models
 		[Required]
 		[MaxLength(500)]
 		public string Description { set; get; }
-		[Required]
 		public int? ParentID { set; get; }
-		[Required]
 		public int? DisplayOrder { set; get; }
-		[Required]
 		public string Image { set; get; }
         public bool? HomeFlag { set; get; }
         public virtual IEnumerable<ProductModel> Products { set; get; }
@@ -35,7 +32,6 @@ namespace TeduShop.Web.Models
 		[Required]
 		[MaxLength(256)]
 		public string MetaDescription { get; set; }
-		[Required]
 		public bool Status { get; set; }
 	}
 }

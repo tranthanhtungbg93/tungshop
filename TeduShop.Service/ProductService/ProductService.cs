@@ -42,6 +42,7 @@ namespace TeduShop.Service.ProductCategoryService
 						tag.Name = tags[i];
 						tag.Type = CommonConstant.ProductTag;
 						_tagRepository.Add(tag);
+						_unitOfWork.Commit();
 					}
 
 					ProductTag productTag = new ProductTag();
@@ -97,6 +98,13 @@ namespace TeduShop.Service.ProductCategoryService
 			return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(id);
 		}
 
+		public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow)
+		{
+			var query = _productRepository.GetMulti(x => x.Status && x.CateforyID == categoryId);
+			totalRow = query.Count();
+			return query.OrderBy(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+		}
+
 		public void SaveChange()
 		{
 			_unitOfWork.Commit();
@@ -118,6 +126,7 @@ namespace TeduShop.Service.ProductCategoryService
 						tag.Name = tags[i];
 						tag.Type = CommonConstant.ProductTag;
 						_tagRepository.Add(tag);
+						_unitOfWork.Commit();
 					}
 					_productTagRespository.DeleteMulti(x => x.ProductID == product.ID);
 					ProductTag productTag = new ProductTag();

@@ -32,7 +32,7 @@
 		}
 
 		function loadproductCategories() {
-			apiService.get('/api/product/loadListDanhMuc', null, function (result) {
+			apiService.get('/api/productCategory/loadListDanhMuc', null, function (result) {
 				$scope.productCategories = result.data;
 			}, function () {
 				console.log('load fail list parent');
