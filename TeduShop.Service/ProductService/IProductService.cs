@@ -18,7 +18,9 @@ namespace TeduShop.Service.ProductCategoryService
 
 		IEnumerable<Product> GetLastest(int id);
 		IEnumerable<Product> GetHotProduct(int id);
-		IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow);
+		IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow, string sort);
+		IEnumerable<Product> Search(string keyword, int page, int pageSize, out int totalRow, string sort);
+		IEnumerable<string> GetListProuductByName(string Keyword);
 		Product GetById(int id);
 		void SaveChange();
 	}

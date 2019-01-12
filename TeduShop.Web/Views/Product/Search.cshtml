@@ -1,9 +1,8 @@
-﻿@model TeduShop.Web.Infrastructure.Core.PaginationSet<TeduShop.Web.Models.ProductModel>
-
+﻿
 @{
-	ViewBag.Title = "Category";
+	var keyword = (string)ViewBag.Keyword;
+	ViewBag.Title = "Kết quả tìm kiếm";
 	Layout = "~/Views/TrangChu/TrangChu.cshtml";
-	var category = (TeduShop.Web.Models.ProductCategoryModel)ViewBag.Category;
 }
 
 <div class="women-product">
@@ -11,7 +10,7 @@
 	{
 		<div class=" w_content">
 			<div class="women">
-				<a href="/@(category.Alias).pc-@(category.ID).html"><h4>@category.Name - <span>@Model.TotalCount sản phẩm</span> </h4></a>
+				<a href=""><h4>Kết quả từ khóa: @keyword- <span>@Model.TotalCount sản phẩm</span> </h4></a>
 				<ul class="w_nav">
 					<li>Sort : </li>
 					<li><a class="active" href="?page=@Model.Page&sort=popular">Phổ biến</a></li> |
@@ -103,5 +102,4 @@
 		<div class="text-center"><span>Khong tim thay ban ghi nao</span></div>
 	}
 </div>
-
 

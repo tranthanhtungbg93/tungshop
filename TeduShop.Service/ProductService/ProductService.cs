@@ -98,16 +98,62 @@ namespace TeduShop.Service.ProductCategoryService
 			return _productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(id);
 		}
 
-		public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow)
+		public IEnumerable<Product> GetListProductByCategoryIdPaging(int categoryId, int page, int pageSize, out int totalRow, string sort)
 		{
 			var query = _productRepository.GetMulti(x => x.Status && x.CateforyID == categoryId);
+
+			switch (sort)
+			{
+				case "popular":
+					query = query.OrderByDescending(x => x.ViewCount);
+					break;
+				case "discount":
+					query = query.OrderByDescending(x => x.PromotionPrice.HasValue);
+					break;
+				case "price":
+					query = query.OrderBy(x => x.Price);
+					break;
+				default:
+					query = query.OrderByDescending(x => x.CreatedDate); // mac dinh sap xep theo dk nay
+					break;
+			}
+
 			totalRow = query.Count();
 			return query.OrderBy(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToList();
+		}
+
+		public IEnumerable<string> GetListProuductByName(string Keyword)
+		{
+			return _productRepository.GetMulti(x => x.Status && x.Name.Contains(Keyword)).Select(y => y.Name);
 		}
 
 		public void SaveChange()
 		{
 			_unitOfWork.Commit();
+		}
+
+		public IEnumerable<Product> Search(string keyword, int page, int pageSize, out int totalRow, string sort)
+		{
+			var query = _productRepository.GetMulti(x => x.Status && x.Name.Contains(keyword));
+
+			switch (sort)
+			{
+				case "popular":
+					query = query.OrderByDescending(x => x.ViewCount);
+					break;
+				case "discount":
+					query = query.OrderByDescending(x => x.PromotionPrice.HasValue);
+					break;
+				case "price":
+					query = query.OrderBy(x => x.Price);
+					break;
+				default:
+					query = query.OrderByDescending(x => x.CreatedDate); // mac dinh sap xep theo dk nay
+					break;
+			}
+
+			totalRow = query.Count();
+			return query.OrderBy(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToList();
 		}
 
 		public void Update(Product product)
