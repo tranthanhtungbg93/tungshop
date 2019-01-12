@@ -11,6 +11,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<link href="~/Assets/Client/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<!--theme-style-->
 	<link href="~/Assets/Client/css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="~/Assets/Client/css/etalage.css" rel="stylesheet" />
 	<!--//theme-style-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link href="~/Assets/Admin/libs/jquery-ui/themes/smoothness/jquery-ui.min.css" rel="stylesheet" />
@@ -38,5 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	@{ Html.RenderAction("Footer", "Home");}
 	<script src="~/Assets/Client/js/common.js"></script>
+	<div class="clearfix"> </div>
+	@RenderSection("footerJs", required: false)
 </body>
 </html>

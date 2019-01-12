@@ -127,6 +127,15 @@ namespace TeduShop.Service.ProductCategoryService
 			return _productRepository.GetMulti(x => x.Status && x.Name.Contains(Keyword)).Select(y => y.Name);
 		}
 
+		public IEnumerable<Product> GetSanPhamLienQuan(int id, int top)
+		{
+			var product = _productRepository.GetSingleById(id);
+
+			return _productRepository.GetMulti(x => x.Status && x.ID != id && x.CateforyID == product.CateforyID)
+					.OrderByDescending(x => x.CreatedDate)
+					.Take(top);
+		}
+
 		public void SaveChange()
 		{
 			_unitOfWork.Commit();

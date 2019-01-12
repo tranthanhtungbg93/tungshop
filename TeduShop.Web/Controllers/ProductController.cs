@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Script.Serialization;
 using TeduShop.Common;
 using TeduShop.Model.Model;
 using TeduShop.Service.ProductCategoryService;
@@ -24,8 +25,18 @@ namespace TeduShop.Web.Controllers
 		// GET: Product
 		public ActionResult Detail(int id)
 		{
+			var productModel = _productService.GetById(id);
+			var viewModel = Mapper.Map<Product, ProductModel>(productModel);
 
-			return View();
+			var relatedProduct = _productService.GetSanPhamLienQuan(id, 6);
+
+			ViewBag.RelatedProducts = Mapper.Map<IEnumerable<Product>, IEnumerable<ProductModel>>(relatedProduct);
+
+			List<string> lstImg = new JavaScriptSerializer().Deserialize<List<string>>(viewModel.MoreImages);
+
+			ViewBag.MoreImgs = lstImg;
+
+			return View(viewModel);
 		}
 
 		public ActionResult Category(int id, int page = 1, string sort = "")

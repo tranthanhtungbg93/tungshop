@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201901040937235_AddTagsfield.Designer.cs">
       <DependentUpon>201901040937235_AddTagsfield.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901120728116_addquantityforproduct.cs" />
+    <Compile Include="Migrations\201901120728116_addquantityforproduct.Designer.cs">
+      <DependentUpon>201901120728116_addquantityforproduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reponsitories\FooterRepository.cs" />
@@ -133,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901040937235_AddTagsfield.resx">
       <DependentUpon>201901040937235_AddTagsfield.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901120728116_addquantityforproduct.resx">
+      <DependentUpon>201901120728116_addquantityforproduct.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

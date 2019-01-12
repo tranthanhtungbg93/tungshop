@@ -37,5 +37,7 @@ namespace TeduShop.Model.Model
 
         [ForeignKey("CategoryID")]
         public virtual IEnumerable<ProductCategory> ProductCategories { set; get; }
+
+		public int? Quantity { get; set; }
     }
 }
