@@ -29,8 +29,9 @@ namespace TeduShop.Data
         public DbSet<Tag> Tags { set; get; }
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<LogError> LogError { set; get; }
+		public DbSet<ThongTinLienLac> ThongTinLienLacs { set; get; }
 
-        public static TeduShopDbContext Create()
+		public static TeduShopDbContext Create()
         {
             return new TeduShopDbContext();
         }

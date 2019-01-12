@@ -6,6 +6,8 @@
 	using System.Collections.Generic;
 	using System.Data.Entity;
 	using System.Data.Entity.Migrations;
+	using System.Data.Entity.Validation;
+	using System.Diagnostics;
 	using System.Linq;
 	using TeduShop.Common;
 	using TeduShop.Model.Model;
@@ -47,6 +49,7 @@
 			AddProduct(context);
 			ContentSlides(context);
 			CreatePages(context);
+			CreateContactDetail(context);
 		}
 
 		public void AddProductCategory(TeduShop.Data.TeduShopDbContext context)
@@ -198,16 +201,52 @@
 
 		private void CreatePages(TeduShopDbContext context)
 		{
-			if(context.Pages.Count() == 0)
+			if (context.Pages.Count() == 0)
 			{
 				var page = new Page()
 				{
-					Alias= "gioi-thieu",
+					Alias = "gioi-thieu",
 					Content = "HP 280 G3 SFF là sự cân đối hài hòa giữa hiệu năng, chất lượng và giá thành đối với một máy tính để bàn dành cho doanh nghiệp. Được thiết kế để đáp ứng tối đa nhu cầu làm việc mỗi ngày, dòng máy tính để bàn HP 280 G3 với sức mạnh xử lý đáng kinh ngạc và cung cấp nhiều tùy chọn cấu hình đi kèm sẽ là lựa chọn mang lại hiệu quả kinh tế cho doanh nghiệp.",
 					Name = "Giới thiệu trang web"
 				};
 				context.Pages.Add(page);
 				context.SaveChanges();
+			}
+		}
+		private void CreateContactDetail(TeduShopDbContext context)
+		{
+			if (context.ThongTinLienLacs.Count() == 0)
+			{
+				try
+				{
+					var contactDetail = new TeduShop.Model.Model.ThongTinLienLac()
+					{
+						TenLienLac = "Shop linh kiện 88",
+						AddressLienLac = "số 81 Quang Trung",
+						EmailLienLac = "tranthanhtung.cd2.21@gmail.com",
+						TrangThai = true,
+						LatLienLac = 21.2752592,
+						LgnLienLac = 106.1888829,
+						SoDienThoai = "0961077031",
+						WebSiteLienLac = "linhkien88.com.vn",
+						OtherLienLac = ""
+					};
+					context.ThongTinLienLacs.Add(contactDetail);
+					context.SaveChanges();
+				}
+				catch (DbEntityValidationException ex)
+				{
+					foreach (var exeve in ex.EntityValidationErrors)
+					{
+						Trace.WriteLine($"Entity of type  \"{exeve.Entry.Entity.GetType().Name}\"" +
+							$" in state \"{exeve.Entry.State}\" has the following validate error :"
+							);
+						foreach (var ex1 in exeve.ValidationErrors)
+						{
+							Trace.WriteLine($"- Property : \"{ex1.PropertyName}\", error: \"{ex1.ErrorMessage}");
+						}
+					}
+				}
 			}
 		}
 	}

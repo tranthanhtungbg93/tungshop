@@ -88,8 +88,13 @@
     <Compile Include="Migrations\201901120914377_productTag.Designer.cs">
       <DependentUpon>201901120914377_productTag.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901121737097_addThongtinLienLac.cs" />
+    <Compile Include="Migrations\201901121737097_addThongtinLienLac.Designer.cs">
+      <DependentUpon>201901121737097_addThongtinLienLac.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reponsitories\ContactDetailRepository.cs" />
     <Compile Include="Reponsitories\FooterRepository.cs" />
     <Compile Include="Reponsitories\LogErrorRepository.cs" />
     <Compile Include="Reponsitories\PageRepository.cs" />
@@ -147,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901120914377_productTag.resx">
       <DependentUpon>201901120914377_productTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121737097_addThongtinLienLac.resx">
+      <DependentUpon>201901121737097_addThongtinLienLac.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

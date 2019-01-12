@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonService.cs" />
+    <Compile Include="ContactDetailService.cs" />
     <Compile Include="Error\ILogError.cs" />
     <Compile Include="Error\LogErrorService.cs" />
     <Compile Include="PageService.cs" />

@@ -1,0 +1,55 @@
+﻿@model TeduShop.Web.Models.ThongTinLienLacModel
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/TrangChu/TrangChu.cshtml";
+}
+
+@section footerJs{
+
+	<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVzAXWlF0lo7EpJmFBKFExhX01C2TNYkA"
+			type="text/javascript"></script>
+	<script src="~/Assets/Client/js/Contact.js"></script>
+}
+
+<style>
+	html, body {
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+
+	#map {
+		height: 500px;
+	}
+</style>
+<input type="hidden" id="hidAddress" value="@Model.TenLienLac<br />Điện thoại:@Model.SoDienThoai <br>Địa chỉ: @Model.AddressLienLac" />
+<input type="hidden" id="hidLat" value="@Model.LatLienLac" />
+<input type="hidden" id="hidLng" value="@Model.LgnLienLac" />
+<input type="hidden" id="hidName" value="@Model.TenLienLac" />
+<div class="main">
+	<div class="reservation_top">
+		<div class=" contact_right">
+			<h3>Thông tin liên hệ</h3>
+			<div class="contact-form">
+				<form method="post" action="contact-post.html">
+					<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+					<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+					<textarea value="Message" onfocus="this.value= '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+					<input type="submit" value="Send">
+					<div class="clearfix"> </div>
+					<div id="map"></div>
+				</form>
+				<address class="address">
+					<p>@Model.AddressLienLac</p>
+					<dl>
+						<dt> </dt>
+						<dd>Telephone:<span> @Model.SoDienThoai</span></dd>
+						<dd>E-mail:&nbsp; <a href="mailto:@(Model.EmailLienLac)">@(Model.EmailLienLac)</a></dd>
+					</dl>
+				</address>
+				<div class="clear-fix"></div>
+			</div>
+		</div>
+	</div>
+</div>
