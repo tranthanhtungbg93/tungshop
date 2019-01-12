@@ -23,6 +23,10 @@ namespace TeduShop.Service.ProductCategoryService
 		IEnumerable<string> GetListProuductByName(string Keyword);
 		IEnumerable<Product> GetSanPhamLienQuan(int id, int top);
 		Product GetById(int id);
+		IEnumerable<Tag> GetListTagByProductId(int id);
+		void IncreaseView(int id);
+		IEnumerable<Product> GetListProductbyTag(string tagId, int page, int pageSize, out int totalRow);
+		Tag GetTag(string tagId);
 		void SaveChange();
 	}
 }

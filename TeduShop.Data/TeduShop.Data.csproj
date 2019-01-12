@@ -84,6 +84,10 @@
     <Compile Include="Migrations\201901120728116_addquantityforproduct.Designer.cs">
       <DependentUpon>201901120728116_addquantityforproduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901120914377_productTag.cs" />
+    <Compile Include="Migrations\201901120914377_productTag.Designer.cs">
+      <DependentUpon>201901120914377_productTag.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reponsitories\FooterRepository.cs" />
@@ -140,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901120728116_addquantityforproduct.resx">
       <DependentUpon>201901120728116_addquantityforproduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901120914377_productTag.resx">
+      <DependentUpon>201901120914377_productTag.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

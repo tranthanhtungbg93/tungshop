@@ -39,5 +39,6 @@ namespace TeduShop.Model.Model
         public virtual IEnumerable<ProductCategory> ProductCategories { set; get; }
 
 		public int? Quantity { get; set; }
-    }
+		public virtual IEnumerable<ProductTag> ProductTags { set; get; }
+	}
 }

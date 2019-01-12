@@ -122,9 +122,21 @@ namespace TeduShop.Service.ProductCategoryService
 			return query.OrderBy(x => x.CreatedDate).Skip((page - 1) * pageSize).Take(pageSize).ToList();
 		}
 
+		public IEnumerable<Product> GetListProductbyTag(string tagId, int page, int pageSize, out int totalRow)
+		{
+			var model = _productRepository.GetListProductByTag(tagId, page, pageSize,out totalRow);
+
+			return model;
+		}
+
 		public IEnumerable<string> GetListProuductByName(string Keyword)
 		{
 			return _productRepository.GetMulti(x => x.Status && x.Name.Contains(Keyword)).Select(y => y.Name);
+		}
+
+		public IEnumerable<Tag> GetListTagByProductId(int id)
+		{
+			return _productTagRespository.GetMulti(x => x.ProductID == id, new string[] { "Tag" }).Select(y => y.Tag);
 		}
 
 		public IEnumerable<Product> GetSanPhamLienQuan(int id, int top)
@@ -134,6 +146,24 @@ namespace TeduShop.Service.ProductCategoryService
 			return _productRepository.GetMulti(x => x.Status && x.ID != id && x.CateforyID == product.CateforyID)
 					.OrderByDescending(x => x.CreatedDate)
 					.Take(top);
+		}
+
+		public Tag GetTag(string tagId)
+		{
+			return _tagRepository.GetSingleByCondition(x => x.ID == tagId);
+		}
+
+		public void IncreaseView(int id)
+		{
+			var product = _productRepository.GetSingleById(id);
+			if (product.ViewCount.HasValue)
+			{
+				product.ViewCount += 1;
+			}
+			else
+			{
+				product.ViewCount = 1;
+			}
 		}
 
 		public void SaveChange()
