@@ -1,4 +1,4 @@
-namespace TeduShop.Data.Migrations
+﻿namespace TeduShop.Data.Migrations
 {
 	using Microsoft.AspNet.Identity;
 	using Microsoft.AspNet.Identity.EntityFramework;
@@ -46,6 +46,7 @@ namespace TeduShop.Data.Migrations
 			AddProductCategory(context);
 			AddProduct(context);
 			ContentSlides(context);
+			CreatePages(context);
 		}
 
 		public void AddProductCategory(TeduShop.Data.TeduShopDbContext context)
@@ -191,6 +192,21 @@ namespace TeduShop.Data.Migrations
 					}
 				};
 				context.Slides.AddRange(lstSlide);
+				context.SaveChanges();
+			}
+		}
+
+		private void CreatePages(TeduShopDbContext context)
+		{
+			if(context.Pages.Count() == 0)
+			{
+				var page = new Page()
+				{
+					Alias= "gioi-thieu",
+					Content = "HP 280 G3 SFF là sự cân đối hài hòa giữa hiệu năng, chất lượng và giá thành đối với một máy tính để bàn dành cho doanh nghiệp. Được thiết kế để đáp ứng tối đa nhu cầu làm việc mỗi ngày, dòng máy tính để bàn HP 280 G3 với sức mạnh xử lý đáng kinh ngạc và cung cấp nhiều tùy chọn cấu hình đi kèm sẽ là lựa chọn mang lại hiệu quả kinh tế cho doanh nghiệp.",
+					Name = "Giới thiệu trang web"
+				};
+				context.Pages.Add(page);
 				context.SaveChanges();
 			}
 		}

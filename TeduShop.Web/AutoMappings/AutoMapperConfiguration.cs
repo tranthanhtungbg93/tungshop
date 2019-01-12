@@ -20,6 +20,7 @@ namespace TeduShop.Web.AutoMappings
             Mapper.CreateMap<Product, ProductModel>();
 			Mapper.CreateMap<Footer, FooterModel>();
 			Mapper.CreateMap<Slide, SlideModel>();
+			Mapper.CreateMap<Page, PageModel>();
 		}
     }
 }

@@ -220,6 +220,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,6 +231,7 @@
     <Compile Include="Infrastructure\Extenssion\EntityExtension.cs" />
     <Compile Include="Models\FooterModel.cs" />
     <Compile Include="Models\HomeViewModel.cs" />
+    <Compile Include="Models\PageModel.cs" />
     <Compile Include="Models\PostCategoryModel.cs" />
     <Compile Include="Models\PostModel.cs" />
     <Compile Include="Models\PostTagModel.cs" />
@@ -8159,6 +8161,7 @@
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListByTag.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
