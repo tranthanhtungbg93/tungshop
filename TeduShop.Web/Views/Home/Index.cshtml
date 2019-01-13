@@ -4,6 +4,13 @@
 	Layout = "~/Views/TrangChu/TrangChu.cshtml";
 }
 
+
+@section footerJs{
+	<script src="~/Assets/Client/js/jquery.wmuSlider.js"></script>
+	<script>
+		$('.example1').wmuSlider();
+	</script>
+}
 <div class="shoes-grid">
 	<div class="wrap-in">
 		<div class="wmuSlider example1 slide-grid">
@@ -31,10 +38,7 @@
 					<li><a href="#" class="">i</a></li>
 				}
 			</ul>
-			<script src="~/Assets/Client/js/jquery.wmuSlider.js"></script>
-			<script>
-				$('.example1').wmuSlider();
-			</script>
+
 		</div>
 		<div class="shoes-grid-left">
 			<a href="single.html">

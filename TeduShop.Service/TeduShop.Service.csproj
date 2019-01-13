@@ -53,6 +53,7 @@
     <Compile Include="ContactDetailService.cs" />
     <Compile Include="Error\ILogError.cs" />
     <Compile Include="Error\LogErrorService.cs" />
+    <Compile Include="FeedbackService.cs" />
     <Compile Include="PageService.cs" />
     <Compile Include="PostCategoryService\IPostCategoryService.cs" />
     <Compile Include="PostCategoryService\PostCategoryService.cs" />

@@ -22,6 +22,7 @@ namespace TeduShop.Web.AutoMappings
 			Mapper.CreateMap<Slide, SlideModel>();
 			Mapper.CreateMap<Page, PageModel>();
 			Mapper.CreateMap<ThongTinLienLac, ThongTinLienLacModel>();
+			Mapper.CreateMap<Feedback, FeedbackModel>();
 		}
     }
 }

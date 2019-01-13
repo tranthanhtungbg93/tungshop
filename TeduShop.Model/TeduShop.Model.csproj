@@ -56,6 +56,7 @@
     <Compile Include="Abstract\Auditable.cs" />
     <Compile Include="Abstract\IAuditable.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
+    <Compile Include="Model\Feedback.cs" />
     <Compile Include="Model\ThongTinLienLac.cs" />
     <Compile Include="Model\Footer.cs" />
     <Compile Include="Model\LogError.cs" />

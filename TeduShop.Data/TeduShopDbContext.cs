@@ -30,6 +30,7 @@ namespace TeduShop.Data
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
         public DbSet<LogError> LogError { set; get; }
 		public DbSet<ThongTinLienLac> ThongTinLienLacs { set; get; }
+		public DbSet<Feedback> Feedbacks { set; get; }
 
 		public static TeduShopDbContext Create()
         {

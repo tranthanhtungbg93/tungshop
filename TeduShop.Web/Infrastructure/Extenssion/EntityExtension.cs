@@ -140,5 +140,14 @@ namespace TeduShop.Web.Infrastructure.Extenssion
 			product.Status = model.Status;
 			product.Quantity = model.Quantity;
 		}
+
+		public static void UpdateFeedBack(this Feedback feedback, FeedbackModel model)
+		{
+			feedback.Name = model.Name;
+			feedback.Message = model.Message;
+			feedback.Status = model.Status;
+			feedback.Email = model.Email;
+			feedback.CreateDate = DateTime.Now;
+		}
 	}
 }
