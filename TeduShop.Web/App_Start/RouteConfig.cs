@@ -42,7 +42,14 @@ namespace TeduShop.Web
 				namespaces: new string[] { "TeduShop.Web.Controllers" }
 			);
 
-			routes.MapRoute(
+            routes.MapRoute(
+                name: "Register",
+                url: "dangky.html",
+                defaults: new { controller = "Account", action = "Register", id = UrlParameter.Optional },
+                namespaces: new string[] { "TeduShop.Web.Controllers" }
+            );
+
+            routes.MapRoute(
 				name: "Page",
 				url: "trang/{alias}.html",
 				defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },

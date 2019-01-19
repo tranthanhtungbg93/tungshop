@@ -245,6 +245,7 @@
     <Compile Include="Models\PostTagModel.cs" />
     <Compile Include="Models\ProductCategoryModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\SlideModel.cs" />
     <Compile Include="Models\TagModel.cs" />
     <Compile Include="Models\ThongTinLienLacModel.cs" />
@@ -7520,6 +7521,7 @@
     <Content Include="Assets\Client\js\jquery.min.js" />
     <Content Include="Assets\Client\js\jquery.wmuSlider.js" />
     <Content Include="Assets\Client\template\contact_template.html" />
+    <Content Include="Assets\Client\template\email.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -7578,7 +7580,6 @@
     <Folder Include="UploadImage\flash\" />
     <Folder Include="UploadImage\images\" />
     <Folder Include="Views\About\" />
-    <Folder Include="Views\Account\" />
     <Folder Include="Views\Post\" />
   </ItemGroup>
   <ItemGroup>
@@ -8174,6 +8175,7 @@
     <Content Include="Views\Product\ListByTag.cshtml" />
     <Content Include="Views\Page\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeduShop.Common\TeduShop.Common.csproj">
