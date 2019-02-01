@@ -50,10 +50,10 @@
 		//		}
 		//	});
 		//});
-		//$('#btnLogout').off('click').on('click', function (e) {
-		//	e.preventDefault();
-		//	$('#frmLogout').submit();
-		//});
+		$('#btnLogout').off('click').on('click', function (e) {
+			e.preventDefault();
+			$('#frmLogout').submit();
+		});
 	}
 }
 common.init();

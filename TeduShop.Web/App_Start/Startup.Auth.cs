@@ -25,88 +25,101 @@ namespace TeduShop.Web.App_Start
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.CreatePerOwinContext<ApplicationSignInManager>(ApplicationSignInManager.Create);
 
-			// Enable the application to use a cookie to store information for the signed in user
-			// and to use a cookie to temporarily store information about a user logging in with a third party login provider
-			// Configure the sign in cookie
-			app.CreatePerOwinContext<UserManager<ApplicationUser>>(CreateManager);
-			app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
-			{
-				TokenEndpointPath = new PathString("/oauth/token"),
-				Provider = new AuthorizationServerProvider(),
-				AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
-				AllowInsecureHttp = true,
+            // Enable the application to use a cookie to store information for the signed in user
+            // and to use a cookie to temporarily store information about a user logging in with a third party login provider
+            // Configure the sign in cookie
+            app.CreatePerOwinContext<UserManager<ApplicationUser>>(CreateManager);
+            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions
+            {
+                TokenEndpointPath = new PathString("/oauth/token"),
+                Provider = new AuthorizationServerProvider(),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
+                AllowInsecureHttp = true,
 
-			});
-			app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+            });
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 
-			// Uncomment the following lines to enable logging in with third party login providers
-			//app.UseMicrosoftAccountAuthentication(
-			//    clientId: "",
-			//    clientSecret: "");
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+                LoginPath = new PathString("/dangnhap.html"),
+                Provider = new CookieAuthenticationProvider()
+                {
+                    OnValidateIdentity = SecurityStampValidator.OnValidateIdentity<ApplicationUserManager, ApplicationUser>(
+                        validateInterval: TimeSpan.FromMinutes(30),
+                        regenerateIdentity: (manager, user) => user.GenerateUserIndetityAsync(manager)
+                        )
+                }
+            });
+            app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
+            // Uncomment the following lines to enable logging in with third party login providers
+            //app.UseMicrosoftAccountAuthentication(
+            //    clientId: "",
+            //    clientSecret: "");
 
-			//app.UseTwitterAuthentication(
-			//   consumerKey: "",
-			//   consumerSecret: "");
+            //app.UseTwitterAuthentication(
+            //   consumerKey: "",
+            //   consumerSecret: "");
 
-			//app.UseFacebookAuthentication(
-			//   appId: "",
-			//   appSecret: "");
+            //app.UseFacebookAuthentication(
+            //   appId: "",
+            //   appSecret: "");
 
-			//app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-			//{
-			//    ClientId = "",
-			//    ClientSecret = ""
-			//});
-		}
-		public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
-		{
-			public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
-			{
-				context.Validated();
-			}
-			public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
-			{
-				var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
+            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //{
+            //    ClientId = "",
+            //    ClientSecret = ""
+            //});
+        }
+        public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
+        {
+            public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
+            {
+                context.Validated();
+            }
+            public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+            {
+                var allowedOrigin = context.OwinContext.Get<string>("as:clientAllowedOrigin");
 
-				if (allowedOrigin == null) allowedOrigin = "*";
+                if (allowedOrigin == null) allowedOrigin = "*";
 
-				context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
 
-				UserManager<ApplicationUser> userManager = context.OwinContext.GetUserManager<UserManager<ApplicationUser>>();
-				ApplicationUser user;
-				try
-				{
-					user = await userManager.FindAsync(context.UserName, context.Password);
-				}
-				catch
-				{
-					// Could not retrieve the user due to error.
-					context.SetError("server_error");
-					context.Rejected();
-					return;
-				}
-				if (user != null)
-				{
-					ClaimsIdentity identity = await userManager.CreateIdentityAsync(
-														   user,
-														   DefaultAuthenticationTypes.ExternalBearer);
-					context.Validated(identity);
-				}
-				else
-				{
-					context.SetError("invalid_grant", "Tài khoản hoặc mật khẩu không đúng.'");
-					context.Rejected();
-				}
-			}
-		}
+                UserManager<ApplicationUser> userManager = context.OwinContext.GetUserManager<UserManager<ApplicationUser>>();
+                ApplicationUser user;
+                try
+                {
+                    user = await userManager.FindAsync(context.UserName, context.Password);
+                }
+                catch
+                {
+                    // Could not retrieve the user due to error.
+                    context.SetError("server_error");
+                    context.Rejected();
+                    return;
+                }
+                if (user != null)
+                {
+                    ClaimsIdentity identity = await userManager.CreateIdentityAsync(
+                                                           user,
+                                                           DefaultAuthenticationTypes.ExternalBearer);
+                    context.Validated(identity);
+                }
+                else
+                {
+                    context.SetError("invalid_grant", "Tài khoản hoặc mật khẩu không đúng.'");
+                    context.Rejected();
+                }
+            }
+        }
 
 
 
-		private static UserManager<ApplicationUser> CreateManager(IdentityFactoryOptions<UserManager<ApplicationUser>> options, IOwinContext context)
-		{
-			var userStore = new UserStore<ApplicationUser>(context.Get<TeduShopDbContext>());
-			var owinManager = new UserManager<ApplicationUser>(userStore);
-			return owinManager;
-		}
-	}
+        private static UserManager<ApplicationUser> CreateManager(IdentityFactoryOptions<UserManager<ApplicationUser>> options, IOwinContext context)
+        {
+            var userStore = new UserStore<ApplicationUser>(context.Get<TeduShopDbContext>());
+            var owinManager = new UserManager<ApplicationUser>(userStore);
+            return owinManager;
+        }
+    }
 }
